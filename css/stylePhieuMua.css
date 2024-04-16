@@ -1,0 +1,463 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Inter, san serif;
+    background-color: #D4DAE6 ;
+
+    width: 1881px;
+    height: 930px;
+    position: relative;
+}
+
+#main-container{
+    width: 1305px;
+    height: 777px;
+    background-color: #F6F4F4;
+    border-radius: 32px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: #4343FE;
+}
+
+#nav-bar-ne{
+    display: inline-block;
+    width: 308px;
+    height: 777px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 32px 0px 0px 32px;
+    /* border: #000 solid; */
+}
+
+#logo{
+  position: relative;
+  width: inherit;
+  height: max-content;
+  /* border: #000 solid; */
+  display: flex;
+  justify-content: center;
+  top: 50px;
+}
+
+span {
+    font-size: 30px;
+    font-family: "inter", san serif;
+    color: #4343FE;
+    color: #0958CA;
+    font-weight: 900;
+}
+
+.nav_ne{
+  position: relative;
+  max-width: inherit;
+  /* border: #a15757 solid; */
+  top: 15%;
+}
+
+.nav-link{
+  font-family: 'inter', sans-serif;
+  font-weight: 900;
+  position: relative;
+  font-size: 20px;
+  color: #9A98A6;
+  font-weight: bold;
+  left: 63px;
+  margin-top: 3px;
+}
+
+.nav-link.active{
+  color: #0958CA;
+  font-weight: 900;
+}
+
+.nav-link:hover{
+  /* font-weight: 900; */
+  /* font-size: 30px; */
+  /* animation: .5s; */
+  color: #DF3673;
+
+}
+
+.working-area{
+  position: absolute;
+  display: inline-block;
+  /* border: #000 solid; */
+  height: 100px;
+  width: 997px;
+  height: inherit;
+}
+
+.tab-container{
+  position: relative;
+  /* border: #000 solid; */
+  width: 997px;
+  height: 120px;
+}
+.ul-tab{
+  position: absolute;
+  top: 50px;
+  margin-left: 28px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+ul li{
+  display: inline-block;
+  font-family: 'inter', sans-serif;
+  color: #575757;
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 35px;
+  margin-left: 0px;
+  padding-left: 0px;
+  cursor: pointer;
+  transition: .5s;
+}
+.tab_btn a{
+  color: #575757;
+}
+
+.ul-tab .tab_btn.active a{
+  color: #DF3673;
+}
+
+ul li:hover{
+  color: #DF3673;
+}
+
+.content{
+  position: absolute;
+  width: 942px;
+  height: 636px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 28px;
+}
+
+.heading-text span{
+  color: black;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.heading-text {
+  display: inline-block;
+  position: absolute;
+  left: 31px;
+  top: 14px;
+}
+
+/* .heading-text .label{
+    margin-top: 0px;
+} */
+
+/* #tabTraCuu .search-box{
+  position: absolute;
+  display: inline-block;
+  top: 25px;
+  right: 29px;
+  width: fit-content;
+  height: fit-content;
+}
+
+#tabTraCuu .search-box input {
+  position: relative;
+  right: 50px;
+  width: 200px;
+  height: 39px;
+}
+
+#tabTraCuu  .search-box button{
+  position: absolute;
+  right: 0;
+  top: 1px;
+}
+
+/* .search-box .form-group.mx-sm-3.mb-2{
+  
+} */
+
+/* .primary-add-btn{
+  display: block;
+  position: absolute;
+  left: 31px;
+  top: 85px;
+} */
+
+.btn-and-labels{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 850px;
+    height: max-content;
+    position: relative;
+    top: 96px;
+    left: 31px;
+    font-weight: 500;
+}
+
+.btn-and-labels .btn.btn-primary {
+  /* background-color: #DF3673;
+  */
+  background-color: #DF3673;
+  color: #fff;
+  border: #DF3673;
+  font-weight: 800;
+}
+
+.btn-and-labels .btn.btn-primary:hover{
+  color: #fff;
+  background-color: #DF3673;
+  border: #DF3673;
+  cursor: pointer;
+}
+
+
+.table-of-content{
+  position: relative;
+  border: 1px #000 solid;
+  top: 119px;
+  left: 31px;
+  max-width: 882px;
+  max-height: 348px;
+  height: 348px;
+  border-radius: 9px;
+}
+
+/* phần giỏ hàng và nút thêm vào giỏ hàng */
+.heading-part {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 27px;
+  margin-right: 27px;
+  margin-top: 25px;
+}
+
+.heading-part .secondary-heading{
+  color: #000;
+  font-weight: 800;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.heading-part .btn.btn-primary{
+  width: 48px;
+  height: 42px;
+  border-radius: 7px;
+  border: #0958CA solid;
+  background: #0958CA;
+  color: #fff;
+}
+
+.heading-part .btn.btn-primary:hover{
+  background: #DF3673;
+  border: #DF3673 solid;
+}
+
+/* phần table và scroll table */
+.scroll-table{
+  width: 854px;
+  height: 260px;
+  position: relative;
+  left: 25px;
+  top: 10px;
+  right: 0px;
+}
+
+.table {
+  max-height: 260px;
+  width: 830px;
+  border-radius: 9px;
+}
+/*-----------------------------------------------------------------------------------------*/
+#collapse1{
+  overflow-y:scroll;
+  height:260px;
+}
+
+th{
+  position: sticky;
+  top: 0px;
+}
+
+.ChiTiet{
+  color: #0958CA;
+  font-weight: 800;
+}
+
+.Xoa{
+  color: #DF3673;
+  font-weight: 800;
+}
+
+.Xoa:hover{
+  color: #df9cb5;
+}
+.ChiTiet:hover{
+  color: #7da8e4;
+}
+
+
+/* css cho pop up */
+
+.content{
+  display: none;
+  animation: moving .5s ease;
+}
+
+@keyframes moving{
+  from{transform: translateX(50px);opacity: 0;}
+  to{transform: translateX(0px);opacity: 1;}
+}
+
+.content.active{
+  display: block;
+}
+
+/* phần tổng giá */
+.total-price-panel{
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  width: 882px;
+  height: fit-content;
+  left: 31px;
+  bottom: 21px;
+}
+.total-price-panel #close{
+  width: 48px;
+  height: 42px;
+  font-weight: 800;
+  background-color: #DF3673;
+  border: #DF3673;
+}
+.label-sl-sp-price-btn{
+  display: flex;
+  align-items: center;
+}
+.label-sl-sp-price-btn .price-total{
+  color: #F00;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-left: 15px;
+  margin-right: 24px;
+}
+
+.label-sl-sp-price-btn .count-total{
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.total-price-panel #LapPhieu{
+  font-weight: 800;
+  background-color: #DF3673;
+  border: #DF3673;
+}
+
+
+/* Từ đoạn này là cái pop up */
+
+.overlay{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: 0.24;
+  z-index: 1;
+  display: none;
+}
+
+.content-popup{
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  /* width: 799px; */
+  width: 1075px;
+  height: 594px;
+  z-index: 2;
+  /* height: 551px; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.form-container{
+  position: absolute;
+  /* height: 475px; */
+  top: 26px;
+  left: 45px;
+
+}
+
+.search-box{
+  position: absolute;
+  display: inline-block;
+  top: 25px;
+  right: 29px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.search-box input {
+  position: relative;
+  right: 50px;
+  width: 200px;
+  height: 39px;
+  /* border-radius: 24px; */
+}
+
+.search-box button{
+  position: absolute;
+  right: 0;
+  top: 1px;
+}
+
+.popup span{
+  color: #000;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.popup .head-of-table{
+  position: relative;
+  top: 44px;
+}
+
+.table-part.scroll-table{
+  position: relative;
+  top: 100px;
+}
+
+.close-footer{
+  position: relative;
+  top: 200px;
+  left: 100%;
+}
+
+.ncc{
+  width: 920px;
+}
+
+
+
+
+
+.popup.active .overlay{
+  display: block;
+}
+
+.popup.active .content-popup {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
