@@ -1,0 +1,114 @@
+/* CSS cho tab tra cứu */
+.content-popup{
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 1075px;
+    height: 702px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+/* .overlay{
+    display: block;
+} */
+  
+.form-container{
+    position: absolute;
+    top: 26px;
+    left: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.form-container .thongKHTimKiem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 33px;
+}
+
+.label-ttncc{
+    margin-bottom: 7px;
+}
+
+.content-popup.traCuu input{
+    width: 238px;
+    height: 48px;
+}
+
+.content-popup.traCuu .header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content-popup.traCuu .header .text1{
+    color: #000;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+.label-for-table{
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.tongCong{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: space-around;
+    align-items: baseline;
+    font-weight: 600;
+    margin-top: 25px;
+}
+.tongCong label{
+    margin-left: 40px;
+}
+
+.tongCong .label-for-total-price{
+    color: #F00;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.content-popup.traCuu .header .text2{
+    margin-bottom: 27px;
+}
+
+.btn-dong{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+
+/* làm scroll cho table */
+#collapse2{
+    overflow-y:scroll;
+    height:246px;
+}
+  
+th{
+    position: sticky;
+    top: 0px;
+}
+
+/* css cho bảng đầu tiên trong tab tra cứu */
+.table-of-content .table{
+    width: 882px;
+}
+.table-of-content {
+    border: none;
+}
+#collapse3{
+    overflow-y:scroll;
+    height:290px;
+}
