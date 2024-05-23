@@ -234,10 +234,21 @@
       <div class="form-container">
         <span>Sửa sản phẩm</span>
         <form action="" method="post" class="editSP">
-          <div class="form-group">
-            <label for="maSP">Mã sản phẩm</label>
-            <input type="text" class="form-control" id="maSP" placeholder="Mã sản phẩm ở đây">
+          <div style="display: flex;
+          justify-content: space-between;">
+            <div class="form-group">
+              <label for="maSP">Mã sản phẩm</label>
+              <input type="text" class="form-control" id="maSP" placeholder="Mã sản phẩm ở đây" disabled>
+            </div>
+  
+            <div class="form-group">
+              <label for="quantity">Số lượng trong kho</label>
+              <input type="text" class="form-control" id="soluong" placeholder="Số lượng ở đây"
+                style="width: 280px;"
+              >
+            </div>
           </div>
+          
 
           <div class="ThongTinChinhSua">
             <span>Điền thông tin chỉnh sửa</span>
@@ -275,9 +286,11 @@
 
           <input type="text" class="form-control" id="themtenSP" placeholder="Tên sản phẩm ở đây">
           <input type="text" class="form-control" id="themgia" placeholder="Giá">
-
+          <input type="text" class="form-control" id="soluong" placeholder="Số lượng trong kho">
           <div class="button">
-            <button type="submit" class="btn btn-primary complete" id="complete">Xong</button>
+            <button type="submit" class="btn btn-primary complete" id="complete"
+              style ="margin-top: -65px;"
+            >Xong</button>
           </div>
 
         </form>
@@ -298,8 +311,8 @@
         <span>Sửa loại sản phẩm</span>
         <form action="" method="post" class="editSP">
           <div class="form-group">
-            <label for="maSP">Mã sản phẩm</label>
-            <input type="text" class="form-control" id="maSP" placeholder="Mã sản phẩm ở đây">
+            <label for="maSP">Mã loại sản phẩm</label>
+            <input type="text" class="form-control" id="maSP" placeholder="Mã loại sản phẩm ở đây" disabled>
           </div>
 
           <div class="ThongTinChinhSua">
@@ -361,11 +374,11 @@
     <div class="overlay"></div>
     <div class="content-popup chinhSua">
       <div class="form-container">
-        <span>Sửa loại đơn vị</span>
+        <span>Sửa đơn vị</span>
         <form action="" method="post" class="editSP">
           <div class="form-group">
             <label for="maDV">Mã đơn vị</label>
-            <input type="text" class="form-control" id="maDV" placeholder="Mã đơn vị ở đây">
+            <input type="text" class="form-control" id="maDV" placeholder="Mã đơn vị ở đây" disabled>
           </div>
           <div class="ThongTinChinhSua">
             <span>Điền thông tin chỉnh sửa</span>
