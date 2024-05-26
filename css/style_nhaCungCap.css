@@ -11,10 +11,6 @@
     transform: translate(-50%, -50%) scale(0);
   }
 
-/* .overlay{
-    display: block;
-} */
-  
 .form-container{
     position: absolute;
     top: 26px;
@@ -24,9 +20,11 @@
     justify-content: space-between;
     align-content: space-between;
 }
+
 .thongKh input {
     margin-bottom: 17px; /* Khoảng cách dưới của ô input */
   }
+
 .form-container .thongKHTimKiem {
     display: flex;
     flex-direction: row;

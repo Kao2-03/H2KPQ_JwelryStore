@@ -4,210 +4,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/stylePhieuMua.css">
-  <link rel="stylesheet" href="../css/style_traCuuPhieuMua.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.6/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="/H2KPQ_JwelryStore/css/stylePhieuMua.css">
+  <link rel="stylesheet" href="/H2KPQ_JwelryStore/css/style_traCuuPhieuMua.css">
   <title>Nhập Môn công nghệ phần mềm</title>
-
 </head>
-    <body style="background-color: #D4DAE6;">
 
-        <!-- cái bảng trắng lớn -->
-        <div id="main-container">
-          <!-- khối nav bar dọc gồm logo và navbar-->
-          <div id="nav-bar-ne">
-            <div id="logo">
-              <a href="PhieuBan.php" style="text-decoration: none;">
-                <span>Kimberly</span>
-              </a>
-            </div>
-            <!-- khối navbar -->
-            <div class="nav_ne">
-              <nav class="nav flex-column">
-                <a class="nav-link" href="phieuBan.php">Phiếu bán</a>
-                <a class="nav-link active" href="phieuMua.php">Phiếu mua</a>
-                <a class="nav-link" href="dichVu.php">Phiếu dịch vụ</a>
-                <a class="nav-link" href="sanPham.php">Sản phẩm</a>
-                <a class="nav-link" href="nhaCungCap.php">Nhà cung cấp</a>
-                <a class="nav-link" href="BaoCao.php">Báo cáo</a>
-              </nav>
-            </div>
-          </div>
-      
-          <!-- khối còn lại của bảng là màn hình thao tác gồm các tab và table... -->
-          <div class="working-area">
-            <div class="tab-container">
-                <ul class="ul-tab">
-                    <li class="tab_btn"><a href="phieuMua.php"
-                        style="text-decoration: none;">Lập phiếu</a></li>
-                    <li class="tab_btn active"><a href="traCuuPhieuMua.php"
-                        style="text-decoration: none;">Tra cứu</a></li>
-                </ul>
-            </div>
-
-            <div class="content active" id="tabDonViTinh">
-              <div class="heading-text">
-                <span>Tra cứu phiếu mua</span>
-              </div>
-
-              <div class="search-box">
-                <form class="form-inline" method="post">
-                  <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="TimKiem" placeholder="Tìm gì nè">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2">Ô kê</button>
-                </form>
-              </div>
-      
-              <div class="table-of-content" id="collapse3">
-                <table class="table table-hover table-bordered" >
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Mã phiếu</th>
-                      <th scope="col">Nhà cung cấp</th>
-                      <th scope="col">Tổng thanh toán</th>
-                      <th scope="col">Ngày thanh toán</th>
-                      <th scope="col">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <!-- <th scope="row">1</th> -->
-                      <td>1</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- <th scope="row">2</th> -->
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            </div>
-          </div>
-            
+<body style="background-color: #D4DAE6;">
+  <div id="main-container">
+    <div id="nav-bar-ne">
+      <div id="logo">
+        <a href="PhieuBan.html" style="text-decoration: none;">
+          <span>Kimberly</span>
+        </a>
+      </div>
+      <div class="nav_ne">
+        <nav class="nav flex-column">
+          <a class="nav-link" href="#">Phiếu bán</a>
+          <a class="nav-link active" href="phieuMua.php">Phiếu mua</a>
+          <a class="nav-link" href="#">Phiếu dịch vụ</a>
+          <a class="nav-link" href="sanPham.html">Sản phẩm</a>
+          <a class="nav-link" href="nhaCungCap.php">Nhà cung cấp</a>
+          <a class="nav-link" href="#">Báo cáo</a>
+        </nav>
+      </div>
+    </div>
+    <div class="working-area">
+      <div class="tab-container">
+        <ul class="ul-tab">
+          <li class="tab_btn"><a href="./phieuMua.php" style="text-decoration: none;">Lập phiếu</a></li>
+          <li class="tab_btn active"><a href="traCuuPhieuMua.html" style="text-decoration: none;">Tra cứu</a></li>
+        </ul>
+      </div>
+      <div class="content active" id="tabDonViTinh">
+        <div class="heading-text">
+          <span>Tra cứu phiếu mua</span>
         </div>
-        <!-- popup của chỉnh sửa -->
-        <div class="popup" id="popup-1">
-          <div class="overlay"></div>
-          <div class="content-popup traCuu">
-            <div class="form-container">
-              <div class="header">
-                <label class="text1">Phiếu mua hàng</label>
-                <label class="text2">Ngày lập 13/4/2024</label>
-              </div>
-
-              <div class="mb-3">
-                <input type="text" class="form-control" id="maHD" placeholder="Mã hóa đơn" disabled>
-              </div>
-
-              <label class="label-ttncc" for="">Thông tin nhà cung cấp</label>
-
-              <div class="thongtinNCC">
-                <input type="text" class="form-control" id="tenNCC" placeholder="Tên nhà cung cấp" disabled>
-                <input type="text" class="form-control" id="diaChi" placeholder="Địa chỉ" disabled>
-                <input type="text" class="form-control" id="sdt" placeholder="Số điện thoại" disabled>
-              </div>
-
-              <div>
-                <label class="label-for-table" for="">Giỏ hàng</label>
-              </div>
-
-              <div class="bangGioHang" id="collapse2">
-                <table class="table table-hover table-bordered" style="width: 920px;">
-                  <thead>
-                      <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Sản phẩm</th>
-                      <th scope="col">Đơn giá</th>
-                      <th scope="col">Số lượng</th>
-                      <th scope="col">Thành tiền</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                      <!-- <th scope="row">1</th> -->
-                        <td>1</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                      <!-- <th scope="row">2</th> -->
-                        <td>2</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                          <td>3</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                        <td>4</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                        <td>5</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="tongCong">
-                <label class="lable-for-count" for="">Tổng thanh toán (3 sản phẩm)</label>
-                <label class="label-for-total-price" for="">76.090.999</label>
-              </div>
-
-              <div class="btn-dong">
-                <button class="btn btn-primary" type="submit" onclick="togglePopupChiTiet_TTPM()">Đóng</button>
-              </div>
-              
-            </div>
-          </div>
+        <div class="search-box">
         </div>
-      
-        <script>
-      
-          // popup
-          function togglePopupChiTiet_TTPM(){
-            document.getElementById("popup-1").classList.toggle("active");
-          };
-        </script>
-      </body>
+        <div class="table-of-content" id="collapse3" style="overflow-y: scroll;height: 400px;">
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Mã phiếu</th>
+                <th scope="col">Nhà cung cấp</th>
+                <th scope="col">Tổng thanh toán</th>
+                <th scope="col">Ngày thanh toán</th>
+                <th scope="col">Thao tác</th>
+              </tr>
+            </thead>
+            <?php include '../Backend_TraCuu/get_purchase_slip_data.php'; ?>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-1">
+    <div class="overlay" onclick="togglePopupChiTiet_TTPM()"></div>
+    <div class="content-popup traCuu" style="width: 950px">
+      <div class="form-container">
+        <div class="header">
+          <label class="text1">Phiếu mua hàng</label>
+          <label class="text2" id="current-date">Ngày lập: <?php echo date('d/m/Y'); ?></label>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" id="maHD" placeholder="Mã hóa đơn">
+        </div>
+        <label class="label-ttncc" for="">Thông tin nhà cung cấp</label>
+        <div class="thongtinNCC">
+          <input type="text" class="form-control" id="tenNCC" placeholder="Tên nhà cung cấp">
+          <input type="text" class="form-control" id="diaChi" placeholder="Địa chỉ">
+          <input type="text" class="form-control" id="sdt" placeholder="Số điện thoại">
+        </div>
+
+        <!-- Dòng trống giữa thông tin nhà cung cấp và bảng sản phẩm -->
+        <br>
+
+        <div>
+          <label class="label-for-table" for="">Giỏ hàng</label>
+        </div>
+        <div class="bangGioHang" id="collapse2" style="overflow-y: scroll; height: 200px">
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">STT</th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Đơn giá</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Thành tiền</th>
+              </tr>
+            </thead>
+            <tbody id="product-list-body">
+
+            </tbody>
+          </table>
+        </div>
+        <div class="tongCong">
+          <label class="lable-for-count" for="">Tổng thanh toán</label>
+          <label class="label-for-total-price" id="total-payment"></label>
+        </div>
+        <div class="btn-dong">
+          <button class="btn btn-primary" type="button" onclick="togglePopupChiTiet_TTPM()">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.6/dist/sweetalert2.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../JavaScript/JS_TCPM.js"></script>
+</body>
+
 </html>
