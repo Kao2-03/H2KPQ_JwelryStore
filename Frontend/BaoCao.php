@@ -38,6 +38,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         function logout() {
             window.location.href = '../Form_login/logout.php';
         }
+        history.pushState(null, null, location.href);
+window.addEventListener('popstate', function(event) {
+    history.pushState(null, null, location.href);
+    alert("Bạn cần phải đăng xuất để rời khỏi trang này!");
+});
     </script>
 </head>
 <body style="background-color: #D4DAE6;">
@@ -46,19 +51,19 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
       <!-- khối nav bar dọc gồm logo và navbar-->
       <div id="nav-bar-ne">
         <div id="logo">
-          <a href="PhieuBan.html" style="text-decoration: none;">
+          <a href="PhieuBan.php" style="text-decoration: none;">
             <span>Kimberly</span>
           </a>
         </div>
         <!-- khối navbar -->
         <div class="nav_ne">
           <nav class="nav flex-column">
-            <a class="nav-link" href="phieuBan.html">Phiếu bán</a>
-            <a class="nav-link " href="phieuMua.html">Phiếu mua</a>
-            <a class="nav-link" href="dichVu.html">Phiếu dịch vụ</a>
-            <a class="nav-link" href="sanPham.html">Sản phẩm</a>
-            <a class="nav-link" href="nhaCungCap.html">Nhà cung cấp</a>
-            <a class="nav-link active" href="BaoCao.html">Báo cáo</a>
+            <a class="nav-link" href="phieuBan.php">Phiếu bán</a>
+            <a class="nav-link " href="phieuMua.php">Phiếu mua</a>
+            <a class="nav-link" href="dichVu.php">Phiếu dịch vụ</a>
+            <a class="nav-link" href="sanPham.php">Sản phẩm</a>
+            <a class="nav-link" href="nhaCungCap.php">Nhà cung cấp</a>
+            <a class="nav-link active" href="BaoCao.php">Báo cáo</a>
           </nav>
         </div>
       </div>
@@ -68,7 +73,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         <div class="tab-container">
             <ul class="ul-tab">
              
-              <li class="tab_btn active"><a href="traCuuPhieuBan.html"
+              <li class="tab_btn active"><a href="traCuuPhieuBan.php"
                   style="text-decoration: none;">Báo cáo tồn kho</a></li>
             </ul>
         </div>

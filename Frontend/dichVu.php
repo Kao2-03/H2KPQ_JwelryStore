@@ -7,7 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styleDV.css">
+  <link rel="stylesheet" href="../css/styleDV.css">
   <title>Nhập Môn công nghệ phần mềm</title>
 </head>
 <body style="background-color: #D4DAE6;">
@@ -16,19 +16,19 @@
       <!-- khối nav bar dọc gồm logo và navbar-->
       <div id="nav-bar-ne">
         <div id="logo">
-          <a href="PhieuBan.html" style="text-decoration: none;">
+          <a href="PhieuBan.php" style="text-decoration: none;">
             <span>Kimberly</span>
           </a>
         </div>
         <!-- khối navbar -->
         <div class="nav_ne">
           <nav class="nav flex-column">
-            <a class="nav-link " href="phieuBan.html">Phiếu bán</a>
-            <a class="nav-link " href="phieuMua.html">Phiếu mua</a>
-            <a class="nav-link active" href="dichVu.html">Phiếu dịch vụ</a>
-            <a class="nav-link" href="sanPham.html">Sản phẩm</a>
-            <a class="nav-link" href="nhaCungCap.html">Nhà cung cấp</a>
-            <a class="nav-link" href="BaoCao.html">Báo cáo</a>
+            <a class="nav-link " href="phieuBan.php">Phiếu bán</a>
+            <a class="nav-link " href="phieuMua.php">Phiếu mua</a>
+            <a class="nav-link active" href="dichVu.php">Phiếu dịch vụ</a>
+            <a class="nav-link" href="sanPham.php">Sản phẩm</a>
+            <a class="nav-link" href="nhaCungCap.php">Nhà cung cấp</a>
+            <a class="nav-link" href="BaoCao.php">Báo cáo</a>
           </nav>
         </div>
       </div>
@@ -37,11 +37,11 @@
       <div class="working-area">
         <div class="tab-container">
             <ul class="ul-tab">
-              <li class="tab_btn active"><a href="dichVu.html"
+              <li class="tab_btn active"><a href="dichVu.php"
                 style="text-decoration: none;">Lập phiếu</a></li>
-              <li class="tab_btn"><a href="traCuuDichVu.html"
+              <li class="tab_btn"><a href="traCuuDichVu.php"
                   style="text-decoration: none;">Tra cứu</a></li>
-                  <li class="tab_btn"><a href="danhMucDichVu.html"
+                  <li class="tab_btn"><a href="danhMucDichVu.php"
                     style="text-decoration: none;">Danh mục dịch vụ</a></li>
             </ul>
         </div>

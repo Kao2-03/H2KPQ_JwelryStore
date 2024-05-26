@@ -16,19 +16,19 @@
       <!-- khối nav bar dọc gồm logo và navbar-->
       <div id="nav-bar-ne">
         <div id="logo">
-          <a href="PhieuBan.html" style="text-decoration: none;">
+          <a href="PhieuBan.php" style="text-decoration: none;">
             <span>Kimberly</span>
           </a>
         </div>
         <!-- khối navbar -->
         <div class="nav_ne">
           <nav class="nav flex-column">
-            <a class="nav-link active" href="phieuBan.html">Phiếu bán</a>
-            <a class="nav-link " href="phieuMua.html">Phiếu mua</a>
-            <a class="nav-link" href="dichVu.html">Phiếu dịch vụ</a>
-            <a class="nav-link" href="sanPham.html">Sản phẩm</a>
-            <a class="nav-link" href="nhaCungCap.html">Nhà cung cấp</a>
-            <a class="nav-link" href="BaoCao.html">Báo cáo</a>
+            <a class="nav-link active" href="phieuBan.php">Phiếu bán</a>
+            <a class="nav-link " href="phieuMua.php">Phiếu mua</a>
+            <a class="nav-link" href="dichVu.php">Phiếu dịch vụ</a>
+            <a class="nav-link" href="sanPham.php">Sản phẩm</a>
+            <a class="nav-link" href="nhaCungCap.php">Nhà cung cấp</a>
+            <a class="nav-link" href="BaoCao.php">Báo cáo</a>
           </nav>
         </div>
       </div>
@@ -37,9 +37,9 @@
       <div class="working-area">
         <div class="tab-container">
             <ul class="ul-tab">
-              <li class="tab_btn active"><a href="phieuBan.html"
+              <li class="tab_btn active"><a href="phieuBan.php"
                 style="text-decoration: none;">Lập phiếu</a></li>
-              <li class="tab_btn"><a href="traCuuPhieuBan.html"
+              <li class="tab_btn"><a href="traCuuPhieuBan.php"
                   style="text-decoration: none;">Tra cứu</a></li>
             </ul>
         </div>
