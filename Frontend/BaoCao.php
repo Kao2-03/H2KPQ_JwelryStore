@@ -1,3 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['id']) && $_SESSION[''] !== true) {
+  header("Location: ../Form_login/index.php");
+  exit();
+}
+
+// Ngăn chặn bộ nhớ cache
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
+header("Pragma: no-cache");
+
+if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +21,24 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styleBC.css">
+  <link rel="stylesheet" href="../css/styleBC.css">
   <title>Nhập Môn công nghệ phần mềm</title>
+  <script>
+   window.onbeforeunload = function() {
+            return "Bạn có chắc chắn muốn rời khỏi trang này?";
+        };
+
+        // Ngăn việc quay lại trang login khi nhấn nút "Lùi" của trình duyệt
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', function(event) {
+            history.pushState(null, null, location.href);
+            alert("Bạn cần phải đăng xuất để rời khỏi trang này!");
+        });
+
+        function logout() {
+            window.location.href = '../Form_login/logout.php';
+        }
+    </script>
 </head>
 <body style="background-color: #D4DAE6;">
     <!-- cái bảng trắng lớn -->
@@ -43,7 +73,16 @@
             </ul>
         </div>
 
-        
+        <div class="logout_button">
+            <button type="button" class="btn btn-danger" href="../Form_login/logout.php"
+            style=
+            " position: absolute;
+              top: 45px;
+              right: 50px;
+            "
+            onclick="navigate()"
+            >Log out</button>
+          </div>
 
         <!-- khối các tab chuyển qua lại -->
         <!-- tab lập phiếu -->
@@ -393,7 +432,15 @@
       function togglePopupChonNCC(){
         document.getElementById("popup-1").classList.toggle("active");
       };
+      function navigate() {
+                window.location.href = '../Form_login/logout.php';
+            };
+      
     </script>
 
 </body>
 </html>
+<?php
+}
+
+?>
