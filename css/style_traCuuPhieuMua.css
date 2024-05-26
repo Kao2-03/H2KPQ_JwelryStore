@@ -3,7 +3,7 @@
     position: absolute;
     background-color: #fff;
     border-radius: 10px;
-    width: 1075px;
+    width: 950px;
     height: 702px;
     z-index: 2;
     top: 50%;
@@ -91,9 +91,9 @@
 }
 
 /* làm scroll cho table */
-#collapse2{
-    overflow-y:scroll;
-    height:246px;
+#result-container, #collapse222{
+    overflow-y: scroll;
+    height:290px;
 }
   
 th{
@@ -108,7 +108,4 @@ th{
 .table-of-content {
     border: none;
 }
-#collapse3{
-    overflow-y:scroll;
-    height:290px;
-}
+

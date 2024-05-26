@@ -1,0 +1,91 @@
+.popup-edit {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1001; /* Above overlay */
+    display: none;
+    width: 500px;
+}
+
+.popup-edit.active {
+    display: block;
+}
+
+.overlay-edit {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0.75;
+    z-index: 1;
+    display: none;
+}
+
+.overlay-edit.active {
+    display: block;
+}
+
+.close-btn-edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.form-container-edit {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-edit .text1 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.header-edit .text2 {
+    margin-bottom: 27px;
+}
+
+.grid-container-edit {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.half-width-edit input {
+    width: calc(50% - 5px);
+}
+
+.nested-container-edit {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.separator-edit {
+    border-top: 2px solid black;
+    margin: 15px 0;
+}
+
+.btn-dong-edit {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.btn-dong-edit .btn {
+    margin-left: 10px;
+}
+
+

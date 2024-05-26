@@ -148,43 +148,6 @@ ul li:hover{
   top: 14px;
 }
 
-/* .heading-text .label{
-    margin-top: 0px;
-} */
-
-/* #tabTraCuu .search-box{
-  position: absolute;
-  display: inline-block;
-  top: 25px;
-  right: 29px;
-  width: fit-content;
-  height: fit-content;
-}
-
-#tabTraCuu .search-box input {
-  position: relative;
-  right: 50px;
-  width: 200px;
-  height: 39px;
-}
-
-#tabTraCuu  .search-box button{
-  position: absolute;
-  right: 0;
-  top: 1px;
-}
-
-/* .search-box .form-group.mx-sm-3.mb-2{
-  
-} */
-
-/* .primary-add-btn{
-  display: block;
-  position: absolute;
-  left: 31px;
-  top: 85px;
-} */
-
 .btn-and-labels{
     align-items: center;
     display: flex;
@@ -198,12 +161,11 @@ ul li:hover{
 }
 
 .btn-and-labels .btn.btn-primary {
-  /* background-color: #DF3673;
-  */
   background-color: #DF3673;
   color: #fff;
   border: #DF3673;
   font-weight: 800;
+  
 }
 
 .btn-and-labels .btn.btn-primary:hover{
@@ -211,13 +173,14 @@ ul li:hover{
   background-color: #DF3673;
   border: #DF3673;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 
 .table-of-content{
   position: relative;
   border: 1px #000 solid;
-  top: 119px;
+  top: 120px;
   left: 31px;
   max-width: 882px;
   max-height: 348px;
@@ -271,10 +234,16 @@ ul li:hover{
   border-radius: 9px;
 }
 /*-----------------------------------------------------------------------------------------*/
-#collapse1{
-  overflow-y:scroll;
-  height:260px;
+#result-container, #collapse1, #result-product, #collapse222{
+  overflow-y: scroll;
+  height: 250px;
 }
+
+.total-price-container {
+  display: flex;
+  justify-content: flex-start; /* Align items to the left */
+}
+
 
 th{
   position: sticky;
@@ -379,9 +348,8 @@ th{
   position: absolute;
   background-color: #fff;
   border-radius: 10px;
-  /* width: 799px; */
   width: 1075px;
-  height: 594px;
+  height: 520px;
   z-index: 2;
   /* height: 551px; */
   top: 50%;
@@ -440,7 +408,7 @@ th{
 
 .close-footer{
   position: relative;
-  top: 200px;
+  top: 150px;
   left: 100%;
 }
 
