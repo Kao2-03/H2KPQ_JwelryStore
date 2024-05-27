@@ -1,5 +1,5 @@
 <?php
-include '../db_connection.php';
+include '../Backend_PM/db_connection.php';
 
 $sql = "SELECT ps.id, ps.supplier_name, ps.total_payment, ps.payment_date, s.diachi, s.sdt 
         FROM purchase_slip ps

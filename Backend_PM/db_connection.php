@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "h2kpq_jwelrystore";
+$dbname = "test_db";
 
 // Create connection
 $mysqli = new mysqli($servername, $username, $password, $dbname);
