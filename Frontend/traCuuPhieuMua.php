@@ -49,7 +49,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
       <div class="tab-container">
         <ul class="ul-tab">
           <li class="tab_btn"><a href="./phieuMua.php" style="text-decoration: none;">Lập phiếu</a></li>
-          <li class="tab_btn active"><a href="traCuuPhieuMua.html" style="text-decoration: none;">Tra cứu</a></li>
+          <li class="tab_btn active"><a href="traCuuPhieuMua.php" style="text-decoration: none;">Tra cứu</a></li>
         </ul>
       </div>
       <div class="content active" id="tabDonViTinh">
