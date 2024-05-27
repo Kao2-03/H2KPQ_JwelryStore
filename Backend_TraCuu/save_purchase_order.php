@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("sds", $supplier_name, $total_payment, $current_date);
 
         if ($stmt->execute()) {
-
+            $purchase_code = $stmt->insert_id;
             $stmt = $mysqli->prepare("INSERT INTO purchase_products (purchase_code, product_name, unit_price, quantity, total_price) VALUES (?, ?, ?, ?, ?)");
 
             foreach ($products as $product) {

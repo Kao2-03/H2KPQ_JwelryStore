@@ -1,8 +1,6 @@
 <?php
-
 // Include the database configuration file
 include '../Backend_PM/db_connection.php'; // Make sure this file contains your DB connection details
-
 
 session_start();
 

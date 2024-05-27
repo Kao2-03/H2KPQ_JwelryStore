@@ -1,5 +1,4 @@
 <?php
-
 include '../Backend_PM/db_connection.php'; // Include file kết nối
 
 $id = $_POST['id'] ?? '';
