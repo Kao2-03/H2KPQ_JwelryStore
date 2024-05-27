@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php'; // Kết nối cơ sở dữ liệu
+include 'db_connection.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $mysqli->close();
 
-    header("Location: /H2KPQ_JwelryStore/Frontend/nhaCungCap.php"); // Chuyển hướng về trang chủ sau khi xóa thành công
+    header("Location: /H2KPQ_JwelryStore/Frontend/nhaCungCap.php");
     exit();
 }
 ?>
