@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $stmt->execute();
 
                 // Update product quantity in the products table
-                $update_stmt = $mysqli->prepare("INSERT INTO products (product_name, price, quantity) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE quantity = quantity + VALUES(quantity)");
+                $update_stmt = $mysqli->prepare("UPDATE products SET quantity = quantity + ? WHERE product_name = ?");
                 if (!$update_stmt) {
-                    throw new Exception("Prepare failed for products: " . $mysqli->error);
+                    throw new Exception("Prepare failed for products update: " . $mysqli->error);
                 }
-                $update_stmt->bind_param("sdi", $product['name'], $product['unit_price'], $product['quantity']);
+                $update_stmt->bind_param("is", $product['quantity'], $product['name']);
                 $update_stmt->execute();
                 $update_stmt->close();
             }
