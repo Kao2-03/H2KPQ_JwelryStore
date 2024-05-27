@@ -65,56 +65,9 @@
               </div>
       
               <div class="table-of-content" id="collapse3">
-                <table class="table table-hover table-bordered" >
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Mã phiếu</th>
-                      <th scope="col">khách hàng</th>
-                      <th scope="col">Số điện thoại</th>
-                      <th scope="col">Ngày lập</th>
-                      <th scope="col">  Tổng  </th>
-                      <th scope="col">Tổng trả trước</th>
-                      <th scope="col">Tổng còn lại</th>
-                      <th scope="col">Tình trạng</th>
-                      <th scope="col">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <!-- <th scope="row">1</th> -->
-                      <td>1</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
+              <?php include "../DichVu/displayTCDV.php"; ?>
                         <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
                         <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- <th scope="row">2</th> -->
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
             </div>
