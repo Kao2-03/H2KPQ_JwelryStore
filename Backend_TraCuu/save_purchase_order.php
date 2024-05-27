@@ -2,7 +2,6 @@
 
 include '../Backend_PM/db_connection.php'; // Include file kết nối
 
-
 // Start the session
 session_start();
 
@@ -25,15 +24,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $stmt = $mysqli->prepare("INSERT INTO purchase_slip (supplier_name, total_payment, payment_date) VALUES (?, ?, ?)");
+        if (!$stmt) {
+            throw new Exception("Prepare failed for purchase_slip: " . $mysqli->error);
+        }
         $stmt->bind_param("sds", $supplier_name, $total_payment, $current_date);
 
         if ($stmt->execute()) {
             $purchase_code = $stmt->insert_id;
             $stmt = $mysqli->prepare("INSERT INTO purchase_products (purchase_code, product_name, unit_price, quantity, total_price) VALUES (?, ?, ?, ?, ?)");
+            if (!$stmt) {
+                throw new Exception("Prepare failed for purchase_products: " . $mysqli->error);
+            }
 
             foreach ($products as $product) {
                 $stmt->bind_param("isdis", $purchase_code, $product['name'], $product['unit_price'], $product['quantity'], $product['total_price']);
                 $stmt->execute();
+
+                // Update product quantity in the products table
+                $update_stmt = $mysqli->prepare("UPDATE products SET quantity = quantity + ? WHERE product_name = ?");
+                if (!$update_stmt) {
+                    throw new Exception("Prepare failed for products update: " . $mysqli->error);
+                }
+                $update_stmt->bind_param("is", $product['quantity'], $product['name']);
+                $update_stmt->execute();
+                $update_stmt->close();
             }
 
             $mysqli->commit();
@@ -45,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mysqli->rollback();
         echo json_encode(['status' => 'error', 'message' => $e->getMessage()]);
     } finally {
+        $stmt->close();
         $mysqli->close();
     }
 } else {
