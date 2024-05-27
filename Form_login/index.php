@@ -25,7 +25,7 @@
                         <input type="password" placeholder="Password" name="password" id="password">
                     </div>
                     <div class="forgot">
-                        <span>Forgot your password?</span>
+                        <span> </span>
                     </div>
                     <button class="btn bkg" type="submit">Sign In</button>
                 </form>
