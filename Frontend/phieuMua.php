@@ -63,13 +63,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
           <span>Lập phiếu mua hàng</span><br />
           <label for="">Ngày lập: <?php echo date('d/m/Y'); ?></label>
         </div>
-        <div class="btn-and-labels">
-          <button type="button" class="btn btn-primary" onclick="togglePopupChonNCC()">
-            Chọn nhà cung cấp
+        <button type="button" class="btn btn-primary" style="margin-top: 90px; margin-bottom: -80px; margin-left: 35px;" onclick="togglePopupChonNCC()">
+            Chọn NCC
           </button>
-          <label for="" class="info tenCTY">Nhà cung cấp:</label>
-          <label for="" class="info diaChi">Địa chỉ:</label>
-          <label for="" class="info SDT">Số điện thoại:</label>
+        <div class="btn-and-labels">
+          <label for="" class="info tenCTY" style="margin-left: 10px;">Nhà cung cấp:</label>
+          <label for="" class="info diaChi" style="margin-left: 2px;">Địa chỉ:</label>
+          <label for="" class="info SDT" style="margin-left: 2px;">Số điện thoại:</label>
         </div>
         <div class="table-of-content">
           <div class="heading-part">
@@ -113,7 +113,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         </div>
         <div class="total-price-panel">
           <div class="label-sl-sp-price-btn">
-            <label for="" class="count-total" style="margin-left: 450px;">Tổng thanh toán (<?php echo count($_SESSION['selected_products'] ?? []); ?> sản phẩm)</label>
+            <label for="" class="count-total" style="margin-left: 420px;">Tổng thanh toán (<?php echo count($_SESSION['selected_products'] ?? []); ?> sản phẩm)</label>
             <label for="" class="price-total">
               <?php
               $total_price = array_sum(array_column($_SESSION['selected_products'] ?? [], 'total_price'));
