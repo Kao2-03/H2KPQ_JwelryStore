@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php'; // Kết nối cơ sở dữ liệu
+include 'db_connection.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
