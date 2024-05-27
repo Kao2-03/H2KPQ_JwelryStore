@@ -52,10 +52,10 @@
         <button type="button" class="btn btn-primary" style="margin-top: 90px; margin-bottom: -80px; margin-left: 35px;" onclick="togglePopupChonNCC()">
             Chọn NCC
           </button>
-        <div class="btn-and-labels">
-          <label for="" class="info tenCTY" style="margin-left: 10px;">Nhà cung cấp:</label>
-          <label for="" class="info diaChi" style="margin-left: 2px;">Địa chỉ:</label>
-          <label for="" class="info SDT" style="margin-left: 2px;">Số điện thoại:</label>
+        <div class="btn-and-labels" style="width: 850px">
+          <label for="" class="info tenCTY" style="margin-left: 10px;">Nhà cung cấp: </label>
+          <label for="" class="info diaChi" style="margin-left: 2px;">Địa chỉ: </label>
+          <label for="" class="info SDT" style="margin-left: 2px;">Số điện thoại: </label>
         </div>
         <div class="table-of-content">
           <div class="heading-part">

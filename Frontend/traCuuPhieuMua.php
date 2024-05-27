@@ -70,19 +70,19 @@
           <label class="text1">Phiếu mua hàng</label>
           <label class="text2" id="current-date">Ngày lập: <?php echo date('d/m/Y'); ?></label>
         </div>
+        <label class="label-ttncc" for="">Mã phiếu</label>
         <div class="mb-3">
-          <input type="text" class="form-control" id="maHD" placeholder="Mã hóa đơn">
+          <input type="text" class="form-control" id="maHD" placeholder="Mã hóa đơn" readonly>
         </div>
         <label class="label-ttncc" for="">Thông tin nhà cung cấp</label>
         <div class="thongtinNCC">
-          <input type="text" class="form-control" id="tenNCC" placeholder="Tên nhà cung cấp">
-          <input type="text" class="form-control" id="diaChi" placeholder="Địa chỉ">
-          <input type="text" class="form-control" id="sdt" placeholder="Số điện thoại">
+          <input type="text" class="form-control" id="tenNCC" placeholder="Tên nhà cung cấp" readonly>
+          <input type="text" class="form-control" style="width: 380px;" id="diaChi" placeholder="Địa chỉ" readonly>
+          <input type="text" class="form-control" style="width: 180px;" id="sdt" placeholder="Số điện thoại" readonly>
         </div>
 
         <!-- Dòng trống giữa thông tin nhà cung cấp và bảng sản phẩm -->
         <br>
-
         <div>
           <label class="label-for-table" for="">Giỏ hàng</label>
         </div>
@@ -98,7 +98,6 @@
               </tr>
             </thead>
             <tbody id="product-list-body">
-
             </tbody>
           </table>
         </div>
