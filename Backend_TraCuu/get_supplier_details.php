@@ -1,5 +1,5 @@
 <?php
-include '../db_connection.php'; // Include file kết nối
+include '../db_connection.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     if (isset($_GET['id']) && !empty($_GET['id'])) {

@@ -11,7 +11,7 @@ if (!$result) {
     exit;
 }
 
-$purchaseDisplayed = array(); // Mảng để lưu các phiếu mua đã hiển thị
+$purchaseDisplayed = array(); 
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -59,6 +59,5 @@ if ($result->num_rows > 0) {
     echo '<tr><td colspan="5">Không có dữ liệu</td></tr>';
 }
 
-// Đóng kết nối
 $mysqli->close();
 ?>
