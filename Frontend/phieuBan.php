@@ -1,3 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['id']) && $_SESSION[''] !== true) {
+  header("Location: ../Form_login/index.php");
+  exit();
+}
+
+// Ngăn chặn bộ nhớ cache
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
+header("Pragma: no-cache");
+
+if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +23,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/stylePB.css">
   <title>Nhập Môn công nghệ phần mềm</title>
+  <script>
+   window.onbeforeunload = function() {
+            return "Bạn có chắc chắn muốn rời khỏi trang này?";
+        };
+
+        // Ngăn việc quay lại trang login khi nhấn nút "Lùi" của trình duyệt
+        history.pushState(null, null, location.href);
+        window.addEventListener('popstate', function(event) {
+            history.pushState(null, null, location.href);
+            alert("Bạn cần phải đăng xuất để rời khỏi trang này!");
+        });
+
+        function logout() {
+            window.location.href = '../Form_login/logout.php';
+        }
+        history.pushState(null, null, location.href);
+window.addEventListener('popstate', function(event) {
+    history.pushState(null, null, location.href);
+    alert("Bạn cần phải đăng xuất để rời khỏi trang này!");
+});
+    </script>
 </head>
 <body style="background-color: #D4DAE6;">
     <!-- cái bảng trắng lớn -->
@@ -378,3 +413,7 @@
 
 </body>
 </html>
+<?php
+}
+
+?>

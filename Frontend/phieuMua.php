@@ -1,3 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['id']) && $_SESSION[''] !== true) {
+  header("Location: ../Form_login/index.php");
+  exit();
+}
+
+// Ngăn chặn bộ nhớ cache
+header("Cache-Control: no-store, no-cache, must-revalidate");
+header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
+header("Pragma: no-cache");
+
+if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,7 +81,7 @@
           <div class="scroll-table" id="collapse3" style="overflow-y: scroll; height: 260px">
             <table class="table table-hover table-bordered product-table">
               <?php
-              session_start();
+              
               if (isset($_SESSION['selected_products']) && count($_SESSION['selected_products']) > 0) : ?>
                 <thead>
                   <tr>
@@ -179,3 +193,7 @@
 </body>
 
 </html>
+<?php
+}
+
+?>
