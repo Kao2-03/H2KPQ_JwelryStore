@@ -24,12 +24,12 @@
             </div>
             <div class="nav_ne">
                 <nav class="nav flex-column">
-                    <a class="nav-link" href="phieuBan.html">Phiếu bán</a>
+                    <a class="nav-link" href="phieuBan.php">Phiếu bán</a>
                     <a class="nav-link" href="./phieuMua.php">Phiếu mua</a>
-                    <a class="nav-link" href="dichVu.html">Phiếu dịch vụ</a>
-                    <a class="nav-link" href="sanPham.html">Sản phẩm</a>
-                    <a class="nav-link active" href="nhaCungCap.html">Nhà cung cấp</a>
-                    <a class="nav-link" href="BaoCao.html">Báo cáo</a>
+                    <a class="nav-link" href="dichVu.php">Phiếu dịch vụ</a>
+                    <a class="nav-link" href="sanPham.php">Sản phẩm</a>
+                    <a class="nav-link active" href="nhaCungCap.php">Nhà cung cấp</a>
+                    <a class="nav-link" href="BaoCao.php">Báo cáo</a>
                 </nav>
             </div>
         </div>
