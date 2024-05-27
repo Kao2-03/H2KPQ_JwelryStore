@@ -1,5 +1,5 @@
 <?php
-include 'db_connection.php';  // Kết nối cơ sở dữ liệu
+include 'db_connection.php';  
 
 $search_keyword = isset($_POST['search_keyword']) ? $_POST['search_keyword'] : '';
 

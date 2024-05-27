@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $mysqli->close();
-        header("Location: /H2KPQ_JwelryStore/Frontend/nhaCungCap.php"); // Bỏ bình luận dòng này nếu cần chuyển hướng
+        header("Location: /H2KPQ_JwelryStore/Frontend/nhaCungCap.php");
     exit();
 }
 ?>
