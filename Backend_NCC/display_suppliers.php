@@ -2,15 +2,11 @@
 // Include the database connection file
 include 'db_connection.php';
 
-// Check if the $mysqli variable is set
 if (isset($mysqli)) {
-    // SQL query to fetch supplier data
-    $sql = "SELECT id, MaNCC, ten, sdt, diachi FROM suppliers"; // Adjust table and column names as per your database structure
+    $sql = "SELECT id, MaNCC, ten, sdt, diachi FROM suppliers"; 
     $result = $mysqli->query($sql);
 
-    // Check if the query was successful
     if ($result) {
-        // Check if there are results
         if ($result->num_rows > 0) {
             echo "<table class='table table-hover table-bordered' align='center'>";
             echo "<thead>
@@ -24,7 +20,6 @@ if (isset($mysqli)) {
                     </tr>
                   </thead>";
             echo "<tbody>";
-            // Loop through the result set and generate table rows
             while($row = $result->fetch_assoc()) {
                 $id = $row["id"];
                 $maNCC = htmlspecialchars($row["MaNCC"]);
@@ -52,7 +47,6 @@ if (isset($mysqli)) {
         echo "Error: " . $mysqli->error;
     }
 
-    // Close the database connection
     $mysqli->close();
 } else {
     echo "Database connection error.";
