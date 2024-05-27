@@ -1,5 +1,5 @@
 <?php
-include '../db_connection.php'; // Include file kết nối
+include '../Backend_PM/db_connection.php'; // Include file kết nối
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Lấy dữ liệu từ POST request

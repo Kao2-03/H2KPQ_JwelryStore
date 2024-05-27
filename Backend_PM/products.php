@@ -1,5 +1,5 @@
 <?php
-include '../db_connection.php';
+include '../Backend_PM/db_connection.php';
 
 if (isset($mysqli)) {
     $sql = "SELECT id, product_name, price, quantity, total_price FROM products";

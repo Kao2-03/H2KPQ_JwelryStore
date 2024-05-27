@@ -1,5 +1,5 @@
 <?php
-include '../db_connection.php'; // Include file kết nối
+include '../Backend_PM/db_connection.php'; // Include file kết nối
 
 // Lấy id của phiếu mua hàng từ yêu cầu POST
 $id = $_POST['id'] ?? '';
