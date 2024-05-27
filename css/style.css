@@ -1,0 +1,466 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Inter, san serif;
+    background-color: #D4DAE6 ;
+
+    width: 1881px;
+    height: 930px;
+    position: relative;
+}
+
+#main-container{
+    width: 1305px;
+    height: 777px;
+    background-color: #F6F4F4;
+    border-radius: 32px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: #4343FE;
+}
+
+#nav-bar-ne{
+    display: inline-block;
+    width: 308px;
+    height: 777px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 32px 0px 0px 32px;
+    /* border: #000 solid; */
+}
+
+#logo{
+  position: relative;
+  width: inherit;
+  height: max-content;
+  /* border: #000 solid; */
+  display: flex;
+  justify-content: center;
+  top: 50px;
+}
+
+span {
+    font-size: 30px;
+    font-family: "inter", san serif;
+    color: #4343FE;
+    color: #0958CA;
+    font-weight: 900;
+}
+
+.nav_ne{
+  position: relative;
+  max-width: inherit;
+  /* border: #a15757 solid; */
+  top: 15%;
+}
+
+.nav-link{
+  font-family: 'inter', sans-serif;
+  font-weight: 900;
+  position: relative;
+  font-size: 20px;
+  color: #9A98A6;
+  font-weight: bold;
+  left: 63px;
+  margin-top: 3px;
+}
+
+.nav-link.active{
+  color: #0958CA;
+  font-weight: 900;
+}
+
+.nav-link:hover{
+  /* font-weight: 900; */
+  /* font-size: 30px; */
+  /* animation: .5s; */
+  color: #DF3673;
+
+}
+
+.working-area{
+  position: absolute;
+  display: inline-block;
+  /* border: #000 solid; */
+  height: 100px;
+  width: 997px;
+  height: inherit;
+}
+
+.tab-container{
+  position: relative;
+  /* border: #000 solid; */
+  width: 997px;
+  height: 120px;
+}
+.ul-tab{
+  position: absolute;
+  top: 50px;
+  margin-left: 28px;
+  margin-bottom: 0px;
+  padding-left: 0px;
+}
+ul li{
+  display: inline-block;
+  font-family: 'inter', sans-serif;
+  color: #575757;
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 35px;
+  margin-left: 0px;
+  padding-left: 0px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.ul-tab .tab_btn.active{
+  color: #DF3673;
+}
+
+ul li:hover{
+  color: #DF3673;
+}
+
+/* .SanPham{
+  color: #DF3673;
+}
+
+.test{
+  position: absolute;
+} */
+
+.content{
+  position: absolute;
+  width: 942px;
+  height: 636px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-left: 28px;
+}
+
+.heading-text span{
+  color: black;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.heading-text {
+  display: inline-block;
+  position: absolute;
+  left: 31px;
+  top: 14px;
+}
+
+.search-box{
+  position: absolute;
+  display: inline-block;
+  top: 25px;
+  right: 29px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.search-box input {
+  position: relative;
+  right: 50px;
+  width: 200px;
+  height: 39px;
+  /* border-radius: 24px; */
+}
+
+.search-box button{
+  position: absolute;
+  right: 0;
+  top: 1px;
+}
+
+/* .search-box .form-group.mx-sm-3.mb-2{
+  
+} */
+
+.primary-add-btn{
+  display: block;
+  position: absolute;
+  left: 31px;
+  top: 85px;
+}
+
+.primary-add-btn span {
+  color: #4887E7;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.primary-add-btn span:hover{
+  color: #DF3673;
+  cursor: pointer;
+}
+
+.table-of-content{
+  position: relative;
+  top: 119px;
+  left: 31px;
+  max-height: 489px;
+  max-width: 882px;
+  border-radius: 9px;
+}
+
+.table {
+  position: relative;
+  max-height: inherit;
+  border-radius: 9px;
+}
+
+#collapse1{
+  overflow-y:scroll;
+  height:489px;
+}
+
+th{
+  position: sticky;
+  top: 0px;
+}
+
+.ChiTiet{
+  color: #0958CA;
+  font-weight: 800;
+}
+
+.Xoa{
+  color: #DF3673;
+  font-weight: 800;
+}
+
+.Xoa:hover{
+  color: #df9cb5;
+}
+.ChiTiet:hover{
+  color: #7da8e4;
+}
+
+/* css cho pop up */
+
+.content{
+  display: none;
+  animation: moving .5s ease;
+}
+
+@keyframes moving{
+  from{transform: translateX(50px);opacity: 0;}
+  to{transform: translateX(0px);opacity: 1;}
+}
+
+.content.active{
+  display: block;
+}
+
+.search-box{
+  margin-left: 10px;
+}
+
+/* Từ đoạn này là cái pop up */
+
+.overlay{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  opacity: 0.24;
+  z-index: 1;
+  display: none;
+}
+
+.content-popup{
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 799px;
+  z-index: 2;
+  height: 551px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.form-container{
+  position: absolute;
+  height: 475px;
+  top: 26px;
+  left: 45px;
+
+}
+
+.content-popup span{
+  font-size: 26px;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.content-popup label{
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#maSP{
+  width: 282px;
+  height: 52px;
+  margin-bottom: 32px;
+}
+
+/* là cái ô điền thông tin */
+.ThongTinChinhSua{
+  border: 1px #575757 solid;
+  border-radius: 9px;
+  width: 714px;
+  height: 235px;
+}
+
+.ThongTinChinhSua span{
+  position: relative;
+  top: 10px;
+  margin-left: 15px;
+  margin-bottom: 100px;
+  font-size: 26px;
+  margin-top: 30px;
+}
+
+/* là ô nhập tên với giá sản phẩm */
+.content-popup.chinhSua .EditText1, .EditText2{
+  width: 675px;
+  height: 52px;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.button {
+  position: absolute;
+  right: 0px;
+  margin-top: 50px;
+}
+.close {
+  background-color: #fff;
+  color: #0958CA;
+  font-weight: 800;
+  border: #fff;
+  position: absolute;
+  right: 80px;
+  bottom: 1.5px;
+}
+.button .complete{
+  background-color: #fff;
+  border: #fff;
+  color: #DF3673;
+  font-weight: 800;
+} 
+
+.button .complete:hover{
+  background-color: #DF3673;
+  color: #fff;
+  border: #DF3673;
+}
+
+.popup.active .overlay{
+  display: block;
+}
+
+.popup.active .content-popup {
+  transition: all 300ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* popup của thêm sản phẩm mới */
+
+.form-them{
+  position: relative;
+  width: 684px;
+  height: 253px;
+  top: 45px;
+  /* border:1px #000 solid; */
+  border-radius: 5px;
+}
+
+span.annouce{
+  font-size: 16px;
+  font-weight: 400;
+  margin-left: 3px;
+  margin-top: 5px;
+}
+
+.form-group label{
+  margin-left: 5px;
+  margin-bottom: 7px;
+}
+
+.form-select, .content-popup .form-control{
+  margin-bottom: 20px;
+  height: 52px;
+}
+
+.form-select{
+  width: 282px;
+}
+
+.content-popup.themMoi #complete{
+  margin-top: 33px;
+}
+
+/* css cho popup của tab loại */
+#popup-3 #phanTram{
+  display: inline-block;
+  width: 195px;
+  margin-top: 10px;
+}
+#popup-3 .form-select{
+  display: inline-block;
+  margin-left: 20px;
+}
+#popup-3 .EditText1{
+  margin-top: 40px;
+}
+/* css cho popup 5 */
+#popup-5 #complete{
+  margin-top: 13px;
+}
+/* css cho popup 6 */
+#popup-6 .content-popup.themMoi{
+  width: 450px;
+  height: 404px;
+}
+#popup-6 .annouce{
+  margin-top: 50px;
+}
+#popup-6 .content-popup.themMoi .form-control{
+  width: 351px;
+}
+#popup-6 .btn.btn-primary.complete{
+  position: absolute;
+  top: 68%;
+  left: 46%;
+  background-color: #fff;
+  border: #fff solid;
+  font-weight: 800;
+  color: #DF3673;
+}
+#popup-6 .btn.btn-primary.complete:hover{
+  background-color: #DF3673;
+  border: #DF3673 solid;
+  font-weight: 800;
+  color: #fff;
+}
+#popup-6 .btn.btn-primary.close{
+  position: relative;
+  top: 0px;
+  left: 35%;
+
+}
+
+/* #popup-6 .content-popup.themMoi .close, .complete{
+  position: absolute;
+  
+} */

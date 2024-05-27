@@ -29,6 +29,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="../css/style.css">
+
       <title>Nhập Môn công nghệ phần mềm</title>
 
     </head>
