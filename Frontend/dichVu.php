@@ -20,8 +20,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styleDV.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/styleDV.css">
   <title>Nhập Môn công nghệ phần mềm</title>
 </head>
 <body style="background-color: #D4DAE6;">
@@ -39,7 +40,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
           <nav class="nav flex-column">
             <a class="nav-link " href="phieuBan.php">Phiếu bán</a>
             <a class="nav-link " href="phieuMua.php">Phiếu mua</a>
-            <a class="nav-link active" href="dichVu.php">Phiếu dịch vụ</a>
+            <a class="nav-link active " href="dichVu.php">Phiếu dịch vụ</a>
             <a class="nav-link" href="sanPham.php">Sản phẩm</a>
             <a class="nav-link" href="nhaCungCap.php">Nhà cung cấp</a>
             <a class="nav-link" href="BaoCao.php">Báo cáo</a>
@@ -51,11 +52,12 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
       <div class="working-area">
         <div class="tab-container">
             <ul class="ul-tab">
-              <li class="tab_btn active"><a href="dichVu.php"
-                style="text-decoration: none;">Lập phiếu</a></li>
+              <li class="tab_btn active">
+                <a href="dichVu.php" style="text-decoration: none;">Lập phiếu</a>
+              </li>
               <li class="tab_btn"><a href="traCuuDichVu.php"
                   style="text-decoration: none;">Tra cứu</a></li>
-                  <li class="tab_btn"><a href="danhMucDichVu.php"
+                  <li class="tab_btn"><a href="frontend/traCuuDichVu.php"
                     style="text-decoration: none;">Danh mục dịch vụ</a></li>
             </ul>
         </div>
@@ -67,7 +69,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         <form class="content active" id="tabLapPhieu" action="nehe.php" method="post">
             <div class="heading-text">
                 <span>Lập phiếu dịch vụ</span><br>
-                <label for="">Ngày lập: 17/3/2024</label>
+                <labe for="">Ngày lập: <?php echo date('d/m/Y');?></label>
             </div>
             <div class="btn-and-labels">
                 <!-- <span onclick="togglePopupThemSP()">Thêm mới sản phẩm</span> -->
@@ -92,6 +94,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 
                 <div class="scroll-table" id="collapse1">
                   <table class="table table-hover table-bordered" >
+                  <?php
+              session_start();
+              if (isset($_SESSION['selectedDV']) && count($_SESSION['selectedDV']) > 0) : ?>
                     <thead>
                         <tr>
                         <th scope="col">#</th>
@@ -104,67 +109,20 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <!-- <th scope="row">1</th> -->
-                          <td>1</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>
-                              <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                          </td>
-                        </tr>
-                        <tr>
-                        <!-- <th scope="row">2</th> -->
-                          <td>2</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>  
-                          <td>-</td>  
-                          <td>
-                              <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <!-- <th scope="row">2</th> -->
-                            <td>3</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>    
-                            <td>-</td>
-                            <td>
-                                <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                          <!-- <th scope="row">2</th> -->
-                          <td>4</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>    
-                          <td>-</td>
-                          <td>
-                              <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <!-- <th scope="row">2</th> -->
-                          <td>5</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td> 
-                          <td>-</td>   
-                          <td>
-                              <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                          </td>
-                        </tr>
+                    <?php foreach ($_SESSION['selectedDV'] as $index => $service) : ?>
+                    <tr>
+                      <td><?php echo htmlspecialchars($index + 1); ?></td>
+                      <td><?php echo htmlspecialchars($service['LoaiDV']); ?></td>
+                      <td><?php echo htmlspecialchars($service['DonGia']); ?></td>
+                      <td><?php echo htmlspecialchars($service['SoLuong']); ?></td>
+                      <td><?php echo htmlspecialchars($service['TongTien']); ?></td>
+                      <td><button type="button" class="btn btn-danger delete-product" data-index="<?php echo $index; ?>">-</button></td>
+                    </tr>
+                  <?php endforeach; ?>
                     </tbody>
+                    <?php else : ?>
+                <p>Không có sản phẩm nào được chọn.</p>
+              <?php endif; ?>
                   </table>
                 </div>
                 
@@ -205,66 +163,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
 
           <div class="ncc table-part scroll-table" id="collapse1">
             <table class="table table-hover table-bordered" style="width: 920px;">
-              <thead>
-                  <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Tên loại dịch vụ</th>
-                  <th scope="col">Mã loại dịch vụ</th>
-                  <th scope="col">"Đơn giá"</th>
-                  <th scope="col">Thao tác</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                  <!-- <th scope="row">1</th> -->
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    
-                    <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                    </td>
-                  </tr>
-                  <tr>
-                  <!-- <th scope="row">2</th> -->
-                    <td>2</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                      
-                    <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <!-- <th scope="row">2</th> -->
-                      <td>3</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                          
-                      <td>
-                          <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                          onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                      </td>
-                  </tr>
-                  <tr>
-                    <!-- <th scope="row">2</th> -->
-                    <td>4</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                        
-                    <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                    </td>
-                  </tr>
-                 
-              </tbody>
+            <?php include '../DichVu/displayDV.php'; ?>
             </table>
           </div>
 

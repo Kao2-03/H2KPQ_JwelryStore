@@ -22,6 +22,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../css/style_DMDV.css">
   <link rel="stylesheet" href="../css/style_danhMucDV.css">
   <title>Nhập Môn công nghệ phần mềm</title>
@@ -43,7 +44,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <nav class="nav flex-column">
                   <a class="nav-link " href="phieuBan.php">Phiếu bán</a>
                   <a class="nav-link " href="phieuMua.php">Phiếu mua</a>
-                  <a class="nav-link active" href="dichVu.php">Phiếu dịch vụ</a>
+                  <a class="nav-link active" href="./dichVu.php">Phiếu dịch vụ</a>
                   <a class="nav-link" href="sanPham.php">Sản phẩm</a>
                   <a class="nav-link" href="nhaCungCap.php">Nhà cung cấp</a>
                   <a class="nav-link" href="BaoCao.php">Báo cáo</a>
@@ -55,7 +56,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             <div class="working-area">
               <div class="tab-container">
                   <ul class="ul-tab">
-                    <li class="tab_btn "><a href="dichVu.php"
+                    <li class="tab_btn ">
+                      <a href="dichVu.php"
                       style="text-decoration: none;">Lập phiếu</a></li>
                     <li class="tab_btn"><a href="traCuuDichVu.php"
                         style="text-decoration: none;">Tra cứu</a></li>
@@ -75,49 +77,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                   <div class="form-group mx-sm-3 mb-2">
                     <input type="text" class="form-control" id="TimKiem" placeholder="Tìm kiếm">
                   </div>
+                                
                   <button type="submit" class="btn btn-primary mb-2">Tìm</button>
                 </form>
               </div>
       
               <div class="table-of-content" id="collapse3">
-                
-                <table class="table table-hover table-bordered" >
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Mã loại dịch vụ</th>
-                      <th scope="col">Tên loại dịch vụ</th>
-                      <th scope="col">Giá</th>
-                      <th scope="col">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <!-- <th scope="row">1</th> -->
-                      <td>1</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chỉnh sửa</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- <th scope="row">2</th> -->
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                     
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chỉnh sửa</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+               <?php include "../DichVu/displayDV.php"; ?>
               </div>
             </div>
             </div>
@@ -206,6 +172,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             document.getElementById("popup-2").classList.toggle("active");
           };
         </script>
+         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/DMDV.js"></script> <!-- Nhúng tệp JavaScript vào trang -->
       </body>
 </html>
 <?php
