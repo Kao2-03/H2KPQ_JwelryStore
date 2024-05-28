@@ -126,12 +126,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 </div>
                 
             </div>
-
             <div class="total-price-panel">
-                <button type="button" class="btn btn-primary" id="close" onclick="togglePopupThemSP()">X</button>
-                <div class="label-sl-sp-price-btn">
-                  <label for="" class="count-total">Tổng thanh toán (3 dịch vụ)</label>
-                  <label for="" class="price-total">76.090.999</label>
+            <div class="label-sl-sp-price-btn">
+            <label for="" class="count-total" style="margin-left: 420px;">Tổng thanh toán (<?php echo count($_SESSION['selected_products'] ?? []); ?> sản phẩm)</label>
+              <label for="" class="price-total">
+                <?php
+                $total_price = array_sum(array_column($_SESSION['selected_products'] ?? [], 'total_price'));
+                echo number_format($total_price, 0, ',', '.');
+                ?>
+              </label>
                   <button type="submit" class="btn btn-primary" id="LapPhieu" onclick="togglePopupThemSP()">Lập phiếu</button>
                 </div>
             </div>
@@ -149,11 +152,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
       <div class="content-popup chinhSua">
         <div class="form-container">
           <div class="ncc Head-of-table">
-            <span>Thêm sản phẩm</span>
+            <span>Thêm dịch vụ</span>
             <div class="search-box">
               <form class="form-inline" method="post">
                 <div class="form-group mx-sm-3 mb-2">
-                  <input type="text" class="form-control" id="TimKiem" placeholder="Tìm kiếm">
+                <input type="text" class="form-control" style="margin-right: 60px;" name="search_keyword_product" id="TimKiemProduct" placeholder="Tìm sản phẩm">
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Tìm</button>
               </form>

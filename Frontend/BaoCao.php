@@ -109,7 +109,7 @@ window.addEventListener('popstate', function(event) {
                 <button type="button" class="btn btn-primary" id="close" >Tải xuống</button>
                 <div class="label-sl-sp-price-btn">
                   
-                  <button type="submit" class="btn btn-primary" id="LapPhieu" >Cập nhật báo cáo</button>
+                <button type="button" class="btn btn-secondary" onclick="capNhatBaoCao()">Cập nhật báo cáo</button>
                 </div>
             </div>
           </form>
