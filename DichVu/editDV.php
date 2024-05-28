@@ -2,11 +2,11 @@
 include 'db_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $ID = $_POST['ID'];
     $TenLoai = $_POST['TenLoai'];
     $DonGia = $_POST['DonGia'];
+    $ID = $_POST['ID'];
 
-    $sql = "UPDATE LOAIDV SET TenLoai=?, DonGia=? WHERE ID=?";
+    $sql = "UPDATE loaidv SET TenLoai=?, DonGia=? WHERE ID=?";
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("ssssi", $TenLoai, $DonGia, $ID);
     

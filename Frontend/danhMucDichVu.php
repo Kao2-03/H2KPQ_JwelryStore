@@ -75,10 +75,10 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
               <div class="search-box">
                 <form class="form-inline" method="post">
                   <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="TimKiem" placeholder="Tìm kiếm">
-                  </div>
-                                
-                  <button type="submit" class="btn btn-primary mb-2">Tìm</button>
+                  <input type="text" class="form-control" style="margin-right: 40px;" name="search_keyword" id="TimKiem" placeholder="Tìm kiếm" required />
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin: 0px 42px;">Tìm</button>
+                        <button type="button" class="btn btn-secondary" onclick="resetSearch()">X</button>
                 </form>
               </div>
       
@@ -125,56 +125,46 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         </div>
       
 <!-- popup của chỉnh sửa nhà cung cấp -->
-<div class="popup" id="popup-2">
-    <div class="overlay"></div>
-    <div class="content-popup traCuu">
-      <div class="form-container">
-        <div class="header">
-          <label class="text1">Thêm nhà cung cấp</label>
-          <label class="text2">Nhập thông tin dưới</label>
-        </div>
+<div class="overlay-edit" id="overlay-edit"></div>
+<div class="popup-edit" id="popup-2">
+        <button class="close-btn-edit" onclick="closeEditPopup()">×</button>
+        <div class="form-container-edit">
+            <div class="header-edit">
+                <label class="text1">Chỉnh sửa dịch vụ</label>
 
-
-        <div class="grid-container">
-            <div class="mb-3 half-width">
-                <input type="text" class="form-control" id="maNCC" placeholder="Mã nhà cung cấp">
             </div>
-            <div class="separator"></div>
-            <div class="mb-3">
-              <div class="nested-container">
-                  <input type="text" class="form-control" id="Ten" placeholder="Tên Nhà Cung Cấp">
-                  <input type="text" class="form-control" id="Diachi" placeholder="Địa Chỉ Nhà Cung Cấp">
-                  <input type="text" class="form-control" id="SDT" placeholder="Số Điện Thoại Nhà Cung Cấp">
-              </div>
-          </div>
-      </div>
-         
-        
-        
-
-       
-        <div class="btn-dong">
-          <button class="btn btn-primary" type="submit" onclick="togglePopupChiTiet_TTPM()">Xong</button>
+            <form method="post" action="../DichVu/editDV.php">
+                <div class="grid-container-edit">
+                    <div class="mb-3 half-width-edit">
+                        <p class="id-display">Chỉnh sửa thông tin: <span id="edit-id-display"></span></p>
+                    </div>
+                    <div class="separator-edit"></div>
+                    <div class="mb-3">
+                        <div class="nested-container-edit">
+                            <input type="text" class="form-control" name="ten" id="edit-TenLoai" placeholder="Tên dịch vụ" required />
+                            <input type="text" class="form-control" name="gia" id="edit-DonGia" placeholder="Đơn giá" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-dong-edit">
+                    <button class="btn btn-primary" type="submit">Xong</button>
+                </div>
+            </form>
         </div>
-        
-      </div>
     </div>
-  </div>
 
-        <script>
-      
-          // popup
-          function togglePopupThemNCC(){
-            document.getElementById("popup-1").classList.toggle("active");
-          };
-          // popup 2
-          function togglePopupChiTiet_TTPM(){
-            document.getElementById("popup-2").classList.toggle("active");
-          };
-        </script>
-         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/DMDV.js"></script> <!-- Nhúng tệp JavaScript vào trang -->
-      </body>
+         
+    <div id="confirm-popup" class="confirm-popup" style="display: none;">
+        <p>Bạn có chắc chắn muốn xóa dịch vụ này không?</p>
+        <button id="confirm-yes" class="btn btn-danger">Có</button>
+        <button id="confirm-no" class="btn btn-secondary">Không</button>
+    </div>
+    <div id="confirm-overlay" class="confirm-overlay" style="display: none;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../JavaScript/DMDV.js"></script>
+</body>
+
 </html>
 <?php
 }

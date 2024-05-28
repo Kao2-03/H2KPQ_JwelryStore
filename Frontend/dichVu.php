@@ -95,7 +95,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <div class="scroll-table" id="collapse1">
                   <table class="table table-hover table-bordered" >
                   <?php
-              session_start();
               if (isset($_SESSION['selectedDV']) && count($_SESSION['selectedDV']) > 0) : ?>
                     <thead>
                         <tr>

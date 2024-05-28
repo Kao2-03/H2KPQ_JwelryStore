@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tenDV = $_POST['TenLoai'];
     $dongia = $_POST['DonGia'];
 
-    $sql = "INSERT INTO LOAIDV (ID, TenLoai, DonGia) VALUES ('$idDV','$tenDV', '$dongia')";
+    $sql = "INSERT INTO LOAIDV ( TenLoai, DonGia) VALUES ('$TenLoai', '$DonGia')";
 
     if ($mysqli->query($sql) === TRUE) {
         echo "New supplier added successfully";
