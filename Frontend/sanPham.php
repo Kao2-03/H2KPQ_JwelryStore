@@ -31,7 +31,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
       <link rel="stylesheet" href="../css/style.css">
 
       <title>Nhập Môn công nghệ phần mềm</title>
-
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
 
     <body style="background-color: #D4DAE6;">
@@ -113,11 +113,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <tbody>
                   <tr>
                     <th scope="row">1</th>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>SP001</td>
+                    <td>Vòng cổ sang chảnh</td>
+                    <td>1000</td>
+                    <td>Trang sức</td>
+                    <td>100</td>
                     <td>
                       <button type="button" class="btn ChiTiet" data-bs-toggle="button"
                         onclick="togglePopupChinhSua()">Chỉnh sửa</button>
@@ -126,11 +126,11 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                   </tr>
                   <tr>
                     <th scope="row">2</th>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
+                    <td>SP002</td>
+                    <td>Kim cương</td>
+                    <td>5000</td>
+                    <td>Kim cương - Đá quí</td>
+                    <td>100</td>
                     <td>
                       <button type="button" class="btn ChiTiet" data-bs-toggle="button"
                         onclick="togglePopupChinhSua()">Chỉnh sửa</button>
@@ -170,31 +170,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                     <th scope="col">Thao tác</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>
-                      <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupSuaLoaiSP()">chỉnh sửa</button>
-                      <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>
-                      <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupSuaLoaiSP()">Chỉnh sửa</button>
-                      <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                    </td>
-                  </tr>
+                <tbody id="DanhSachLSP">
+                  <?php include '../BackEnd_LSP/loadLSP.php'?>
                 </tbody>
               </table>
             </div>
@@ -227,29 +204,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                     <th scope="col">Thao tác</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <!-- <th scope="row">1</th> -->
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>
-                      <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupSuaDV()">Chỉnh
-                        sửa</button>
-                      <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <!-- <th scope="row">2</th> -->
-                    <td>2</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>
-                      <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupSuaDV()">Chỉnh
-                        sửa</button>
-                      <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                    </td>
-                  </tr>
+                <tbody id="DanhSachDV">
+                  <?php include "../Backend_DV/loadDV.php"?>
                 </tbody>
               </table>
             </div>
@@ -435,7 +391,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             <form action="" method="post" class="form-them">
               <input type="text" class="form-control" id="themDonVi" placeholder="Tên đơn vị mới">
               <!-- <div class="button"> -->
-              <button type="submit" class="btn btn-primary complete" id="complete">Xong</button>
+              <button type="submit" class="btn btn-primary complete" id="complete" onclick = "themDV()">Xong</button>
               <!-- </div> -->
             </form>
             <button class="btn btn-primary close" onclick="togglePopupThemDV()" id="close">Đóng</button>
@@ -481,6 +437,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 window.location.href = '../Form_login/logout.php';
             };
       </script>
+      <script src="../JavaScript/JS_DV.js"></script>
     </body>
 
     </html>  
