@@ -91,6 +91,7 @@ window.addEventListener('popstate', function(event) {
                 <label for="" class="info diaChi">Địa chỉ:</label>
                 <label for="" class="info SDT"  >Số điện thoại:</label>
 
+                <input type="hidden" id="nhacc" name="nhacc" value="">
                 <input type="hidden" id="ten_ncc" name="ten_ncc">
                 <input type="hidden" id="dia_chi" name="dia_chi">
                 <input type="hidden" id="sdt" name="sdt">
@@ -127,8 +128,7 @@ window.addEventListener('popstate', function(event) {
                   <label for="" class="count-total">Tổng thanh toán (<span style="font-size: 16px; color: black;" id="product-count">0</span> sản phẩm)</label>
                   <label for="" class="price-total">0</label>
                   <input type="hidden" name="tong_tien" id="tong_tien" value="0">
-                  <button id="submitButton" type="button" onclick="prepareAndSubmitForm(event)">Lập phiếu</button>
-
+                  <button type="submit" class="btn btn-primary" id="LapPhieu" onclick="prepareAndSubmitForm()">Lập phiếu</button>
                 </div>
             </div>
         </form>
@@ -175,7 +175,7 @@ window.addEventListener('popstate', function(event) {
 </div>
 
 <!-- Popup Nhà cung cấp -->
-<div class="popup" id="popup-1-Mua">
+<div class="popup" id="popup-1">
   <div class="overlay"></div>
   <div class="content-popup chinhSua">
     <div class="form-container">

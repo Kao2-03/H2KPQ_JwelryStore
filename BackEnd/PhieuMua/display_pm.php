@@ -4,10 +4,10 @@ include "../Form_login/db_conn.php";
 if (isset($conn)) {
     $sql = "SELECT MaNCC, ten, sdt, diachi FROM suppliers"; 
     $result = $conn->query($sql);
-
+    $i =1;
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {
-            $i =1;
+            
             $maNCC = htmlspecialchars($row["MaNCC"]);
             $ten = htmlspecialchars($row["ten"]);
             $diachi = htmlspecialchars($row["diachi"]);
@@ -20,6 +20,7 @@ if (isset($conn)) {
             echo "<td>" . $sdt . "</td>";
             echo "<td>
                     <button class='btn btn-primary btn-sm select-supplier' 
+                    data-supplier-id='$maNCC'
                     data-supplier-name='$ten' 
                     data-supplier-address='$diachi' 
                     data-supplier-phone='$sdt'>Chọn</button>

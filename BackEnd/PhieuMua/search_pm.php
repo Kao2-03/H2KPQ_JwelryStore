@@ -20,13 +20,13 @@ $conn->close();
 
 if (count($search_results) > 0) {
   foreach ($search_results as $row) {
-    $id = $row["id"];
+    $i=1;
     $maNCC = htmlspecialchars($row["MaNCC"]);
     $ten = htmlspecialchars($row["ten"]);
     $diachi = htmlspecialchars($row["diachi"]);
     $sdt = htmlspecialchars($row["sdt"]);
     echo "<tr>";
-    echo "<td>" . $id . "</td>";
+    echo "<td>" . $i . "</td>";
     echo "<td>" . $maNCC . "</td>";
     echo "<td>" . $ten . "</td>";
     echo "<td>" . $diachi . "</td>";
@@ -38,6 +38,7 @@ if (count($search_results) > 0) {
         data-supplier-phone='$sdt'>Chọn</button>
           </td>";
     echo "</tr>";
+    $i++;
   }
 } else {
   echo "<tr><td colspan='6'>Không tìm thấy kết quả</td></tr>";
