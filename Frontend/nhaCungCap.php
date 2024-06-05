@@ -21,10 +21,12 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
     <link rel="stylesheet" href="../css/styleNCC.css" />
     <link rel="stylesheet" href="../css/style_nhaCungCap.css" />
     <link rel="stylesheet" href="../css/NCC_CSS/NCC_php.css" />
     <link rel="stylesheet" href="../css/NCC_CSS/ncc_php_edit.css" />
+    <script src="../JavaScript/JS_NCC.js"></script>
     <title>Nhập Môn công nghệ phần mềm</title>
 </head>
 
@@ -73,7 +75,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 </div>
 
                 <div class="table-of-content" id="collapse3">
-                    <?php include '../Backend_NCC/display_suppliers.php'; ?>
+                    <?php include '../Backend/NCC/display_suppliers.php'; ?>
                 </div>
             </div>
         </div>
@@ -89,7 +91,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                     <label class="text1">Thêm nhà cung cấp</label>
                     <label class="text2">Nhập thông tin dưới</label>
                 </div>
-                <form method="post" action="../Backend_NCC/add_supplier.php">
+                <form method="post" action="../Backend/NCC/add_supplier.php">
                     <div class="mb-3">
                         <input type="text" class="form-control" name="MaNCC" placeholder="Mã Nhà Cung Cấp" required />
                     </div>
@@ -121,16 +123,15 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <label class="text1">Chỉnh sửa nhà cung cấp</label>
 
             </div>
-            <form method="post" action="../Backend_NCC/edit_supplier.php">
+            <form method="post" action="../Backend/NCC/edit_supplier.php">
                 <div class="grid-container-edit">
                     <div class="mb-3 half-width-edit">
                         <p class="id-display">Chỉnh sửa thông tin: <span id="edit-id-display"></span></p>
-                        <input type="text" class="form-control" name="id" id="edit-id" placeholder="Mã nhà cung cấp" readonly />
+                        <input type="text" class="form-control" name="MaNCC" id="edit-MaNCC" placeholder="Mã nhà cung cấp" required />
                     </div>
                     <div class="separator-edit"></div>
                     <div class="mb-3">
                         <div class="nested-container-edit">
-                            <input type="text" class="form-control" name="MaNCC" id="edit-MaNCC" placeholder="Mã Nhà Cung Cấp" required />
                             <input type="text" class="form-control" name="ten" id="edit-ten" placeholder="Tên Nhà Cung Cấp" required />
                             <input type="text" class="form-control" name="diachi" id="edit-diachi" placeholder="Địa Chỉ Nhà Cung Cấp" required />
                             <input type="text" class="form-control" name="sdt" id="edit-sdt" placeholder="Số Điện Thoại Nhà Cung Cấp" required />
@@ -150,9 +151,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         <button id="confirm-no" class="btn btn-secondary">Không</button>
     </div>
     <div id="confirm-overlay" class="confirm-overlay" style="display: none;"></div>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../JavaScript/JS_NCC.js"></script>
 </body>
 
 </html>

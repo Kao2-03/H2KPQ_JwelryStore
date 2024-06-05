@@ -5,7 +5,7 @@ $(document).ready(function() {
         if (keyword) {
             $.ajax({
                 type: 'POST',
-                url: '../Backend_NCC/search_supplier.php',
+                url: '../Backend/NCC/search_supplier.php',
                 data: {
                     search_keyword: keyword
                 },
@@ -25,7 +25,7 @@ function resetSearch() {
     $('#TimKiem').val('');
     $.ajax({
         type: 'POST',
-        url: '../Backend_NCC/display_suppliers.php',
+        url: '../BackEnd/NCC/display_suppliers.php',
         success: function(response) {
             $('#collapse3').html(response);
         },
@@ -40,9 +40,8 @@ function togglePopupThemNCC() {
     document.getElementById("popup-1").classList.toggle("active");
 }
 
-function openEditPopup(id, MaNCC, ten, diachi, sdt) {
-    document.getElementById('edit-id').value = id;
-    document.getElementById('edit-MaNCC').value = MaNCC;
+function openEditPopup(maNCC, ten, diachi, sdt) {
+    document.getElementById('edit-MaNCC').value = maNCC;
     document.getElementById('edit-ten').value = ten;
     document.getElementById('edit-diachi').value = diachi;
     document.getElementById('edit-sdt').value = sdt;
@@ -50,6 +49,7 @@ function openEditPopup(id, MaNCC, ten, diachi, sdt) {
     document.getElementById('popup-2').classList.add('active');
     document.getElementById('overlay-edit').classList.add('active');
 }
+
 
 function closeEditPopup() {
     document.getElementById('popup-2').classList.remove('active');
@@ -63,7 +63,7 @@ function deleteSupplier(id) {
     document.getElementById("confirm-yes").onclick = function() {
         var form = document.createElement("form");
         form.setAttribute("method", "post");
-        form.setAttribute("action", "../Backend_NCC/delete_supplier.php");
+        form.setAttribute("action", "../BackEnd/NCC/delete_supplier.php");
 
         var hiddenField = document.createElement("input");
         hiddenField.setAttribute("type", "hidden");
@@ -81,3 +81,5 @@ function deleteSupplier(id) {
         document.getElementById("confirm-overlay").style.display = 'none';
     };
 }
+
+

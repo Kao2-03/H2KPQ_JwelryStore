@@ -23,6 +23,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.6/dist/sweetalert2.min.css">
   <link rel="stylesheet" href="/H2KPQ_JwelryStore/css/stylePhieuMua.css">
   <link rel="stylesheet" href="/H2KPQ_JwelryStore/css/style_traCuuPhieuMua.css">
+  <script src="../JavaScript/TraCuuPM.js"></script>
   <title>Nhập Môn công nghệ phần mềm</title>
 </head>
 
@@ -69,7 +70,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <th scope="col">Thao tác</th>
               </tr>
             </thead>
-            <?php include '../Backend_TraCuu/get_purchase_slip_data.php'; ?>
+            <?php include '../BackEnd/TraCuuPMH/DS_PM.php'; ?>
           </table>
         </div>
       </div>
@@ -127,7 +128,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
   </div>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.6/dist/sweetalert2.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="../JavaScript/JS_TCPM.js"></script>
 </body>
 
 </html>

@@ -1,34 +1,18 @@
-<?php
-session_start();
-if (!isset($_SESSION['id']) && $_SESSION[''] !== true) {
-  header("Location: ../Form_login/index.php");
-  exit();
-}
-
-// Ngăn chặn bộ nhớ cache
-header("Cache-Control: no-store, no-cache, must-revalidate");
-header("Expires: Thu, 19 Nov 1981 08:52:00 GMT");
-header("Pragma: no-cache");
-
-if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="../css/stylePB.css">
   <link rel="stylesheet" href="../css/style_traCuuPhieuBan.css">
+  <script src="../JavaScript/TraCuuPB.js"></script>
   <title>Nhập Môn công nghệ phần mềm</title>
-
 </head>
     <body style="background-color: #D4DAE6;">
-
         <!-- cái bảng trắng lớn -->
         <div id="main-container">
           <!-- khối nav bar dọc gồm logo và navbar-->
@@ -68,9 +52,9 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
               </div>
 
               <div class="search-box">
-                <form class="form-inline" method="post">
+                <form class="form-inline" id="FormTimKiemPhieuBan" method="post">
                   <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="TimKiem" placeholder="Tìm kiếm">
+                    <input type="text" class="form-control TimKiemPhieuBan" id="searchPhieuBan" placeholder="Tìm kiếm">
                   </div>
                   <button type="submit" class="btn btn-primary mb-2">Tìm</button>
                 </form>
@@ -82,44 +66,20 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Mã phiếu</th>
-                      <th scope="col">Nhà cung cấp</th>
+                      <th scope="col">Khách hàng</th>
                       <th scope="col">Tổng thanh toán</th>
                       <th scope="col">Ngày thanh toán</th>
                       <th scope="col">Thao tác</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <!-- <th scope="row">1</th> -->
-                      <td>1</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- <th scope="row">2</th> -->
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
+                      <?php include "../BackEnd/TraCuuPBH/DS_PB.php" ?>
                   </tbody>
                 </table>
               </div>
             </div>
             </div>
-          </div>
-            
+          </div>          
         </div>
         <!-- popup của chi tiết -->
         <div class="popup" id="popup-1">
@@ -135,11 +95,8 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                 <input type="text" class="form-control" id="maHD" placeholder="Mã hóa đơn" disabled>
               </div>
 
-              
-
               <div class="thongKh">
-                <input type="text" class="form-control" id="tenNCC" placeholder="Tên Khách hàng" disabled>
-                
+                <input type="text" class="form-control" id="tenKH" placeholder="Tên Khách hàng" disabled>
               </div>
 
               <div>
@@ -158,46 +115,6 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                       </tr>
                   </thead>
                   <tbody>
-                      <tr>
-                      <!-- <th scope="row">1</th> -->
-                        <td>1</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                      <!-- <th scope="row">2</th> -->
-                        <td>2</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                          <td>3</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                        <td>4</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                        <td>5</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                      </tr>
                   </tbody>
                 </table>
               </div>
@@ -214,9 +131,7 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             </div>
           </div>
         </div>
-      
         <script>
-      
           // popup
           function togglePopupChiTiet_TTPM(){
             document.getElementById("popup-1").classList.toggle("active");
@@ -224,7 +139,3 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
         </script>
       </body>
 </html>
-<?php
-}
-
-?>
