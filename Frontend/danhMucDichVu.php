@@ -22,7 +22,13 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/DV_CSS/dv_php.css" />
+    <link rel="stylesheet" href="../css/DV_CSS/dv_php_edit.css" />
+    
   <link rel="stylesheet" href="../css/style_DMDV.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style_danhMucDV.css">
   <title>Nhập Môn công nghệ phần mềm</title>
 
@@ -64,151 +70,101 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
                   </ul>
               </div>
 
-            <div class="content active" id="tabDonViTinh">
-              <div class="heading-text">
-                <button type="button" class="btn NCC" data-bs-toggle="button" onclick="togglePopupThemNCC()">Thêm loại dịch vụ mới</button>
-                
-              </div>
+              <div class="content active" id="tabDonViTinh">
+    <div class="heading-text">
+    <button type="button" class="btn NCC" data-bs-toggle="button" onclick="togglePopupThemNCC()">
+    Thêm loại dịch vụ
+                    </button>
+    </div>
 
-              <div class="search-box">
-                <form class="form-inline" method="post">
-                  <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="TimKiem" placeholder="Tìm kiếm">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2">Tìm</button>
-                </form>
-              </div>
-      
-              <div class="table-of-content" id="collapse3">
-                
-                <table class="table table-hover table-bordered" >
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Mã loại dịch vụ</th>
-                      <th scope="col">Tên loại dịch vụ</th>
-                      <th scope="col">Giá</th>
-                      <th scope="col">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <!-- <th scope="row">1</th> -->
-                      <td>1</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chỉnh sửa</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- <th scope="row">2</th> -->
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                     
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chỉnh sửa</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+    <div class="search-box">
+        <form class="form-inline" id="search-form">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control" style="margin-right: 40px;" name="search_keyword" id="TimKiem" placeholder="Tìm kiếm" required />
             </div>
-            </div>
-          </div>
-            
-        </div>
-        <!-- popup của thêm nhà cung cấp -->
-        <div class="popup" id="popup-1">
-          <div class="overlay"></div>
-          <div class="content-popup traCuu">
-            <div class="form-container">
-              <div class="header">
+            <button type="submit" class="btn btn-primary" style="margin: 0px 42px;">Tìm</button>
+            <button type="button" class="btn btn-secondary" onclick="resetSearch()">X</button>
+        </form>
+    </div>
+
+    <div class="table-of-content" id="collapse3">
+        <?php include '../BackEnd_DV/display_loaidv.php'; ?>
+    </div>
+</div>
+
+<!-- Popup của thêm loại dịch vụ -->
+<div class="popup" id="popup-1">
+<div class="overlay" onclick="togglePopupThemNCC()"></div>
+
+    <div class="content-popup traCuu">
+    <button class="close-btn" onclick="togglePopupThemNCC()">×</button>
+
+        <div class="form-container">
+        
+            <div class="header">
                 <label class="text1">Thêm loại dịch vụ</label>
                 <label class="text2">Nhập thông tin dưới</label>
-              </div>
-
-              <div class="mb-3">
-                <input type="text" class="form-control" id="Ten" placeholder="Tên Loại dịch vụ">
-              </div>
-
-              
-
-              <div class="thongKh">
-                <input type="text" class="form-control" id="Diachi" placeholder="Giá">
-                
-              </div>    
- 
-
-            
-              
-
-             
-              <div class="btn-dong">
-                <button class="btn btn-primary" type="submit" onclick="togglePopupThemNCC()">Xong</button>
-              </div>
-              
             </div>
-          </div>
-        </div>
-      
-<!-- popup của chỉnh sửa nhà cung cấp -->
-<div class="popup" id="popup-2">
-    <div class="overlay"></div>
-    <div class="content-popup traCuu">
-      <div class="form-container">
-        <div class="header">
-          <label class="text1">Thêm nhà cung cấp</label>
-          <label class="text2">Nhập thông tin dưới</label>
-        </div>
+            <form method="post" action="../BackEnd_DV/add_loaidv.php">
 
-
-        <div class="grid-container">
-            <div class="mb-3 half-width">
-                <input type="text" class="form-control" id="maNCC" placeholder="Mã nhà cung cấp">
-            </div>
-            <div class="separator"></div>
-            <div class="mb-3">
-              <div class="nested-container">
-                  <input type="text" class="form-control" id="Ten" placeholder="Tên Nhà Cung Cấp">
-                  <input type="text" class="form-control" id="Diachi" placeholder="Địa Chỉ Nhà Cung Cấp">
-                  <input type="text" class="form-control" id="SDT" placeholder="Số Điện Thoại Nhà Cung Cấp">
-              </div>
-          </div>
-      </div>
-         
-        
-        
-
-       
-        <div class="btn-dong">
-          <button class="btn btn-primary" type="submit" onclick="togglePopupChiTiet_TTPM()">Xong</button>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="TenLoai" id="TenLoai" placeholder="Tên loại dịch vụ" required>
+                </div>
+                <div class="thongKh">
+                    <input type="text" class="form-control" name="DonGia" id="DonGia" placeholder="Đơn giá" required>
+                </div>    
+                <div class="btn-dong">
+                    <button class="btn btn-primary" type="submit">Xong</button>
+                </div>
+            </form>
         </div>
-        
-      </div>
     </div>
-  </div>
+</div>
 
-        <script>
-      
-          // popup
-          function togglePopupThemNCC(){
-            document.getElementById("popup-1").classList.toggle("active");
-          };
-          // popup 2
-          function togglePopupChiTiet_TTPM(){
-            document.getElementById("popup-2").classList.toggle("active");
-          };
-        </script>
-      </body>
+<!-- Popup của chỉnh sửa loại dịch vụ -->
+<div class="overlay-edit" id="overlay-edit" onclick="closeEditPopup()"></div>
+<div class="popup-edit" id="popup-2">
+    <button class="close-btn-edit" onclick="closeEditPopup()">×</button>
+    <div class="form-container-edit">
+        <div class="header-edit">
+            <label class="text1">Chỉnh sửa loại dịch vụ</label>
+        </div>
+        <form method="post" action="../Backend_DV/edit_loaidv.php">
+            <div class="grid-container-edit">
+                <div class="mb-3 half-width-edit">
+                    <p class="id-display">Chỉnh sửa thông tin: <span id="edit-id-display"></span></p>
+                    <input type="text" class="form-control" name="ID" id="edit-ID" placeholder="Mã loại dịch vụ" readonly />
+                </div>
+                <div class="separator-edit"></div>
+                <div class="mb-3">
+                    <div class="nested-container-edit">
+                        <input type="text" class="form-control" name="TenLoai" id="edit-TenLoai" placeholder="Tên loại dịch vụ" required />
+                        <input type="text" class="form-control" name="DonGia" id="edit-DonGia" placeholder="Đơn giá" required />
+                    </div>
+                </div>
+            </div>
+            <div class="btn-dong-edit">
+                <button class="btn btn-primary" type="submit">Xong</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Confirm delete popup -->
+<div id="confirm-popup" class="confirm-popup" style="display: none;">
+    <p>Bạn có chắc chắn muốn xóa loại dịch vụ này không?</p>
+    <button id="confirm-yes" class="btn btn-danger">Có</button>
+    <button id="confirm-no" class="btn btn-secondary">Không</button>
+</div>
+<div id="confirm-overlay" class="confirm-overlay" style="display: none;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../JavaScript/JS_LDV.js"></script>
+</body>
+
 </html>
 <?php
 }
 
 ?>
+       

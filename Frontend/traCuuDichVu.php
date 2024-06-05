@@ -65,212 +65,142 @@ if(isset($_SESSION['id']) && isset($_SESSION['user_name'])){
             </div>
 
             <div class="content active" id="tabDonViTinh">
-              <div class="heading-text">
-                <span>Tra cứu phiếu dịch vụ</span>
-              </div>
+    <div class="heading-text">
+        <span>Tra cứu phiếu dịch vụ</span>
+    </div>
 
-              <div class="search-box">
-                <form class="form-inline" method="post">
-                  <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="TimKiem" placeholder="Tìm kiếm">
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2">Tìm</button>
-                </form>
-              </div>
-      
-              <div class="table-of-content" id="collapse3">
-                <table class="table table-hover table-bordered" >
-                  <thead>
-                    <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Mã phiếu</th>
-                      <th scope="col">khách hàng</th>
-                      <th scope="col">Số điện thoại</th>
-                      <th scope="col">Ngày lập</th>
-                      <th scope="col">  Tổng  </th>
-                      <th scope="col">Tổng trả trước</th>
-                      <th scope="col">Tổng còn lại</th>
-                      <th scope="col">Tình trạng</th>
-                      <th scope="col">Thao tác</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <!-- <th scope="row">1</th> -->
-                      <td>1</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <!-- <th scope="row">2</th> -->
-                      <td>2</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button" onclick="togglePopupChiTiet_TTPM()">Chi tiết</button>
-                        <button type="button" class="btn Xoa" data-bs-toggle="button">Xóa</button>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            </div>
-          </div>
-            
-        </div>
-        <!-- popup của chi tiết -->
-        <div class="popup" id="popup-1">
-          <div class="overlay"></div>
-          <div class="content-popup traCuu">
+    <div class="search-box"></div>
+    <div class="table-of-content" id="collapse3" style="overflow-y: scroll; height: 400px;">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Mã phiếu</th>
+                    <th scope="col">Khách hàng</th>
+                    <th scope="col">Số điện thoại</th>
+                    <th scope="col">Ngày lập</th>
+                    <th scope="col">Tổng</th>
+                    <th scope="col">Tổng trả trước</th>
+                    <th scope="col">Tổng còn lại</th>
+                    <th scope="col">Tình trạng</th>
+                    <th scope="col">Thao tác</th>
+                </tr>
+            </thead>
+            <tbody id="phieu-dich-vu-list">
+                <?php include '../Backend_TraCuuPDV/get_DV_slip_data.php'; ?>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Popup của chi tiết -->
+    <div class="popup" id="popup-1">
+        <div class="overlay" id="overlay" onclick="togglePopupChiTiet_TTPDV()"></div>
+        <div class="content-popup traCuu" style="width: 950px">
             <div class="form-container">
-              <div class="header">
-                <label class="text1">Phiếu dịch vụ</label>
-                <label class="text2">Ngày lập 13/4/2024</label>
-              </div>
-
-              <div class="mb-3">
-    <input type="text" class="form-control" id="maphieu" placeholder="Mã phiếu" disabled>
-</div>
-
-<div class="flex-container">
-    <div class="thongKh">
-        <input type="text" class="form-control" id="tenKH" placeholder="Tên Khách hàng" disabled>
-    </div>
-    
-    <div class="thongKh">
-        <input type="text" class="form-control" id="SDT" placeholder="Số điện thoại" disabled>
-    </div>
-</div>
-
-              <div class="bangGioHang" id="collapse2">
-                <table class="table table-hover table-bordered" style="width: 920px;">
-                  <thead>
-                      <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">Sản phẩm</th>
-                      <th scope="col">Đơn giá</th>
-                      <th scope="col">Số lượng</th>
-                      <th scope="col">Thành tiền</th><th scope="col">Sản phẩm</th>
-                      <th scope="col">Đơn giá</th>
-                      <th scope="col">Số lượng</th>
-                      <th scope="col">Thành tiền</th>
-                      <th scope="col">Thành tiền</th>
-                      
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                      <!-- <th scope="row">1</th> -->
-                        <td>1</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        
-                      </tr>
-                      <tr>
-                      <!-- <th scope="row">2</th> -->
-                        <td>2</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                          <td>3</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                          <td>4</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        
-                      </tr>
-                      <tr>
-                        <!-- <th scope="row">2</th> -->
-                          <td>5</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        
-                      </tr>
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="tongCong">
-                <label class="lable-for-count" for="">Tổng thanh toán (3 sản phẩm)</label>
-                <label class="label-for-total-price" for="">76.090.999</label>
-              </div>
-
-              <div class="btn-dong">
-                <button class="btn btn-primary" type="submit" onclick="togglePopupChiTiet_TTPM()">Đóng</button>
-              </div>
-              
+                <div class="header">
+                    <label class="text1">Phiếu dịch vụ</label>
+                    <label class="text2" id="current-date">Ngày lập: <span id="popup-ngay-lap"></span></label>
+                </div>
+                <label class="label-ttncc" for="">Mã phiếu</label>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="popup-ma-phieu" placeholder="Mã hóa đơn" readonly>
+                </div>
+                <label class="label-ttncc" for="">Thông tin khách hàng</label>
+                <div class="thongtinkh">
+                    <input type="text" class="form-control" id="popup-khach-hang" placeholder="Tên khách hàng" readonly>
+                    <br>
+                    <input type="text" class="form-control" style="width: 180px;" id="popup-sdt" placeholder="Số điện thoại" readonly>
+                </div>
+                <br>
+                <div>
+                    <label class="label-for-table" for="">Dịch vụ</label>
+                </div>
+                <div class="bangGioHang" id="collapse2" style="overflow-y: scroll; height: 200px">
+                    <table class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">STT</th>
+                                <th scope="col">Tên dịch vụ</th>
+                                <th scope="col">Đơn giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Thành tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dv-list-body">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tongCong">
+                    <label class="label-for-count" for="">Tổng thanh toán</label>
+                    <label class="label-for-total-price" id="total-payment"></label>
+                </div>
+                <div class="btn-dong">
+                    <button class="btn btn-primary" type="button" onclick="togglePopupChiTiet_TTPDV()">Đóng</button>
+                </div>
             </div>
-          </div>
         </div>
-      
-        <script>
-      
-          // popup
-          function togglePopupChiTiet_TTPM(){
-            document.getElementById("popup-1").classList.toggle("active");
-          };
-        </script>
-      </body>
+    </div>
+
+    <script>
+        // Hàm để mở/đóng popup chi tiết phiếu dịch vụ
+        function togglePopupChiTiet_TTPDV() {
+            const popup = document.getElementById("popup-1");
+            const overlay = document.getElementById("overlay");
+            popup.classList.toggle("active");
+            overlay.classList.toggle("active");
+        }
+
+        // Hàm để hiển thị thông tin chi tiết phiếu dịch vụ
+        function showServiceDetails(SoPhieu, NgayLap, KhachHang, Tong, SDT, dichVuJson) {
+            document.getElementById("popup-ma-phieu").value = SoPhieu;
+            document.getElementById("popup-ngay-lap").innerText = NgayLap;
+            document.getElementById("popup-khach-hang").value = KhachHang;
+            document.getElementById("popup-sdt").value = SDT;
+
+            // Cập nhật danh sách dịch vụ
+            const dvListBody = document.getElementById("dv-list-body");
+            dvListBody.innerHTML = '';
+            const dichVu = JSON.parse(dichVuJson);
+            dichVu.forEach((dv, index) => {
+                const row = `<tr>
+                    <td>${index + 1}</td>
+                    <td>${dv.TenLoai}</td>
+                    <td>${dv.DonGia}</td>
+                    <td>${dv.SoLuong}</td>
+                    <td>${dv.ThanhTien}</td>
+                </tr>`;
+                dvListBody.innerHTML += row;
+            });
+
+            // Cập nhật tổng thanh toán
+            document.getElementById("total-payment").textContent = Tong;
+
+            // Hiển thị popup
+            togglePopupChiTiet_TTPDV();
+        }
+    </script>
+    <script>
+    function deletePurchase(SoPhieu) {
+        if (confirm("Bạn có chắc chắn muốn xóa phiếu này không?")) {
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "delete_purchase.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        document.getElementById("purchase-" + SoPhieu).remove();
+                        alert("Xóa phiếu thành công!");
+                    } else {
+                        alert("Lỗi khi xóa phiếu: " + response.message);
+                    }
+                }
+            };
+            xhr.send("SoPhieu=" + SoPhieu);
+        }
+    }
+</script>
+
+</body>
 </html>
 <?php
 }
