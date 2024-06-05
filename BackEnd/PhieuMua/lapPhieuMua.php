@@ -11,7 +11,7 @@ function taoSoPhieu($conn) {
         $row = $result->fetch_assoc();
         $maxSoPhieu = $row["maxSoPhieu"];
         $nextSoPhieu = intval($maxSoPhieu) + 1;
-        return "PM" . sprintf("%02d", $nextSoPhieu); // Điều chỉnh để phù hợp với định dạng mã số phiếu mới
+        return "PM" . sprintf("%02d", $nextSoPhieu);
     } else {
         return "PM01";
     }
@@ -36,6 +36,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
+    // Verify supplier ID
+    $sqlVerifySupplier = "SELECT MaNCC FROM suppliers WHERE MaNCC = '$nhacc'";
+    $resultVerifySupplier = $conn->query($sqlVerifySupplier);
+    if ($resultVerifySupplier->num_rows === 0) {
+        echo json_encode(array("success" => false, "error" => "Nhà cung cấp không tồn tại."));
+        exit();
+    }
+
     // Create a new invoice number
     $soPhieu = taoSoPhieu($conn);
 
@@ -50,17 +58,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $soLuong = $item['SoLuong'];
             $donGia = $item['DonGia'];
             $thanhTien = $item['ThanhTien'];
-            
+
             // Insert data into the ctphieumua table
             $sqlCTPhieuMua = "INSERT INTO ctphieumua (SOPHIEUMUA, SANPHAM, SOLUONG, DONGIA, THANHTIEN)
                               VALUES ('$soPhieu', '$sanPham', '$soLuong', '$donGia', '$thanhTien')";
             $conn->query($sqlCTPhieuMua);
 
-            // Optional: Update the product inventory after purchasing
+            // Update the product inventory after purchasing
             $sqlUpdateInventory = "UPDATE sanpham SET SoLuongKho = SoLuongKho + $soLuong WHERE MaSP = '$sanPham'";
-            $conn->query($sqlUpdateInventory);
+            if ($conn->query($sqlUpdateInventory) !== TRUE) {
+                // Log error if update fails
+                error_log("Error updating inventory for product $sanPham: " . $conn->error);
+            }
         }
-        
 
         // Return a JSON object for frontend processing
         echo json_encode(array("success" => true));
