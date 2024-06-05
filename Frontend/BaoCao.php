@@ -91,127 +91,24 @@ window.addEventListener('popstate', function(event) {
 
         <!-- khối các tab chuyển qua lại -->
         <!-- tab lập phiếu -->
-        <form class="content active" id="tabLapPhieu" action="nehe.php" method="post">
-           
-            <div class="btn-and-labels">
-                <!-- <span onclick="togglePopupThemSP()">Thêm mới sản phẩm</span> -->
-                <div class="form-group mx-sm-3 mb-2">
-                    <input type="month" class="form-control" id="thang" name="thang">
-                  </div>
-                  
-            </div>
-            <div class="table-of-content"> <!--id="collapse1"-->
-                <div class="heading-part">
-                    
-                    
-                </div>
-                
-                <div class="scroll-table" id="collapse1">
-                  <table class="table table-hover table-bordered" >
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Sản phẩm</th>
-                        <th scope="col">Tồn đầu</th>
-                        <th scope="col">Mua vào</th>
-                        <th scope="col">Bán ra</th>
-                        <th scope="col">Tồn cuối</th>
-                        <th scope="col">Đơn vị</th>
-                        
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <!-- <th scope="row">1</th> -->
-                          <td>1</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          
-                        </tr>
-                        <tr>
-                        <!-- <th scope="row">2</th> -->
-                          <td>2</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td> 
-                          <td>-</td>
-                          <td>-</td>   
-                          
-                        </tr>
-                        <tr>
-                          <!-- <th scope="row">2</th> -->
-                            <td>3</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td> 
-                            <td>-</td>
-                          <td>-</td>   
-                            
-                        </tr>
-                        <tr>
-                          <!-- <th scope="row">2</th> -->
-                          <td>4</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td> 
-                          <td>-</td>
-                          <td>-</td>   
-                         
-                        </tr>
-                        <tr>
-                          <!-- <th scope="row">2</th> -->
-                          <td>5</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>
-                          <td>-</td>    
-                          
-                        </tr>
-                        <tr>
-                            <!-- <th scope="row">2</th> -->
-                            <td>6</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                          <td>-</td>    
-                            
-                          </tr>
-                          <tr>
-                            <!-- <th scope="row">2</th> -->
-                            <td>7</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                            <td>-</td>
-                          <td>-</td>   
-                            
-                          </tr>
-                    </tbody>
-                  </table>
-                </div>
-                
-            </div>
-
-            <div class="total-price-panel">
-                <button type="button" class="btn btn-primary" id="close" >Tải xuống</button>
-                <div class="label-sl-sp-price-btn">
-                  
-                  <button type="submit" class="btn btn-primary" id="LapPhieu" >Cập nhật báo cáo</button>
-                </div>
-            </div>
-          </form>
+        <form class="content active" id="tabLapPhieu">
+    <div class="btn-and-labels">
+        <div class="form-group mx-sm-3 mb-2">
+            <input type="month" class="form-control" id="thang" name="thang">
+        </div>
+    </div>
+    <div class="table-of-content">
+        <div class="heading-part" id="report-content">
+            <!-- Kết quả báo cáo sẽ được hiển thị ở đây -->
+        </div>
+    </div>
+    <div class="total-price-panel">
+        <button type="button" class="btn btn-primary" id="download-btn">Tải xuống</button>
+        <div class="label-sl-sp-price-btn">
+            <button type="button" class="btn btn-secondary" id="update-btn">Cập nhật báo cáo</button>
+        </div>
+    </div>
+</form>
     
         <!-- popup của thêm sản phẩm -->
         
@@ -242,82 +139,17 @@ window.addEventListener('popstate', function(event) {
                   <tr>
                   <th scope="col">#</th>
                   <th scope="col">Sản phẩm</th>
-                  <th scope="col">Đơn giá</th>
-                  <th scope="col">Số lượng</th>
-                  <th scope="col">Thành tiền</th>
+                  <th scope="col">Tồn đầu</th>
+                  <th scope="col">Mua vào</th>
+                  <th scope="col">Bán ra</th>
+                  <th scope="col">Tồn cuối</th>
                   <th scope="col">Thao tác</th>
                   </tr>
               </thead>
               <tbody>
-                  <tr>
-                  <!-- <th scope="row">1</th> -->
-                    <td>1</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                    </td>
-                  </tr>
-                  <tr>
-                  <!-- <th scope="row">2</th> -->
-                    <td>2</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>    
-                    <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <!-- <th scope="row">2</th> -->
-                      <td>3</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>
-                      <td>-</td>    
-                      <td>
-                          <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                          onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                      </td>
-                  </tr>
-                  <tr>
-                    <!-- <th scope="row">2</th> -->
-                    <td>4</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>    
-                    <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <!-- <th scope="row">2</th> -->
-                    <td>5</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>
-                    <td>-</td>    
-                    <td>
-                        <button type="button" class="btn ChiTiet" data-bs-toggle="button"
-                        onclick="togglePopupChinhSua()">Thêm vào giỏ</button>
-                    </td>
-                  </tr>
+        
               </tbody>
-            </table>
-          </div>
-
-          <div class="ncc close-footer">
-            <button class="btn btn-primary close" onclick="togglePopupThemGioHang()">Đóng</button>
-          </div>
-
-        </div>
+                 
 
   
       </div>
@@ -442,6 +274,8 @@ window.addEventListener('popstate', function(event) {
             };
       
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../JavaScript/JS_BC.js"></script>
 
 </body>
 </html>
