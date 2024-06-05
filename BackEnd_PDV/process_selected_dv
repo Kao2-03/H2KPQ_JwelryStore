@@ -1,0 +1,28 @@
+<?php
+// Kiểm tra xem dữ liệu đã được gửi từ trang web hay không
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Lấy thông tin về dịch vụ đã chọn từ biến POST
+    $selected_dv_id = $_POST['selected_dv_id']; // ID của dịch vụ đã chọn
+
+    // Xử lý dữ liệu
+    // Ví dụ: Thêm dịch vụ vào giỏ hàng
+    $message = '';
+    if (addToCart($selected_dv_id)) {
+        $message = "Dịch vụ đã được thêm vào giỏ hàng thành công";
+    } else {
+        $message = "Đã xảy ra lỗi khi thêm dịch vụ vào giỏ hàng";
+    }
+
+    // Trả về phản hồi cho trang web
+    echo json_encode(['status' => 'success', 'message' => $message]);
+} else {
+    // Trả về thông báo lỗi nếu có yêu cầu không hợp lệ
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request method']);
+}
+
+// Hàm để thêm dịch vụ vào giỏ hàng
+function addToCart($dv_id) {
+    // Thực hiện các thao tác cần thiết để thêm dịch vụ vào giỏ hàng
+    // Trả về true nếu thêm thành công và false nếu thất bại
+}
+?>

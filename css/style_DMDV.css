@@ -234,6 +234,14 @@ ul li:hover{
   margin-top: 25px;
 }
 
+.heading-part {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 27px;
+  margin-right: 27px;
+  margin-top: 25px;
+}
+
 .heading-part .secondary-heading{
   color: #000;
   font-weight: 800;
